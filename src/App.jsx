@@ -1,50 +1,47 @@
 import React, {useImperativeHandle, useState} from "react";
-import User from "./components/User.jsx";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./css/App.css";
+import "./css/Sidebar.css";
+import "./css/Navbar.css";
+import "./css/Login.css";
+import Sidebar from "./components/Sidebar.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Users from "./pages/Users.jsx";
+import Login from "./pages/Login.jsx";
 
 class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            users: [
-                {id: 1, firstName: "Pedro", lastName: "Lopez", email: "pedro.cabj@test.com", role: "User"},
-                {id: 2, firstName: "Victoria", lastName: "Gonzalez", email: "vic2000@test.com", role: "User"},
-                {id: 3, firstName: "Juan", lastName: "Gutierrez", email: "juan@test.com", role: "Admin"},
-                {id: 4, firstName: "Lucas", lastName: "Garcia", email: "lucasgarcia@test.com", role: "User"},
-                {id: 5, firstName: "Sofia", lastName: "Fernandez", email: "sofer@test.com", role: "Admin"},
-            ]
+            sidebarOpen: true,
         };
     }
 
-
-    deleteUser = function(userId) {
-        let users = [...this.state.users];
-        users = users.filter((user) => {
-            return user.id !== userId
-        });
-        this.setState({users : users});
-        
+    toggleSidebar() {
+        this.setState(prevState => ({
+            sidebarOpen: !prevState.sidebarOpen
+        }));
     }
 
     render() {
         return (
-            <div className = "container">
-                <h3 className = "p-3 text-center"> Lista de usuarios </h3>
-                <table className="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Rol</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.users.map((user) => {
-                            return <User userData={user} onClick={this.deleteUser.bind(this)}/>
-                        })}
-                    </tbody>
-                </table>
-            </div>
+            <Router>
+                <Switch>
+                    <Route path="/" exact component={Login} />
+
+                    <div className = "App">
+                        <Navbar onClick={this.toggleSidebar.bind(this)}/>
+                            <div className="MainContainer">
+                                <Sidebar className={this.state.sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}/>
+                                <div className="Content">
+                                    <Route path='/users' exact component={Users} />
+                                </div>
+                            </div>
+                        
+                    </div>
+                </Switch>
+            </Router>
         );
     }
 }
