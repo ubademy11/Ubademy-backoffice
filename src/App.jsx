@@ -5,10 +5,12 @@ import "./css/App.css";
 import "./css/Sidebar.css";
 import "./css/Navbar.css";
 import "./css/Login.css";
+import "./css/SignIn.css";
 import Sidebar from "./components/Sidebar.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Users from "./pages/Users.jsx";
 import Login from "./pages/Login.jsx";
+import SignIn from "./pages/SignIn.jsx";
 
 class App extends React.Component{
     constructor(props){
@@ -29,7 +31,7 @@ class App extends React.Component{
             <Router>
                 <Switch>
                     <Route path="/" exact component={Login} />
-
+                    <Route path="/signIn" exact component={SignIn} />
                     <div className = "App">
                         <Navbar onClick={this.toggleSidebar.bind(this)}/>
                             <div className="MainContainer">
