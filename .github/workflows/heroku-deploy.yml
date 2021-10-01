@@ -15,9 +15,9 @@ jobs:
 
       - name: Set Version
         uses: actions/setup-node@v2
+
+      #TODO add tests
       
-      - name: Setup dependencies
-        run: #tests
   deploy:
     runs-on: ubuntu-latest
     needs: tests
