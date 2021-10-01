@@ -24,8 +24,6 @@ jobs:
           sudo npm install --global yarn
           yarn --version
           yarn --frozen-lockfile
-      - name: Run lint
-        run: yarn lint:ci --fix
       - name: Run tests
         run: yarn test
   deploy:
