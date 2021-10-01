@@ -8,8 +8,8 @@ class User extends React.Component {
                 <td>{this.props.userData.role}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <button className="btn btn-warning">Editar</button>
-                        <button className="btn btn-danger" onClick={() => this.props.onClick(this.props.userData.id)}>Eliminar</button>
+                        <button className="btn btn-warning">Edit</button>
+                        <button className="btn btn-danger" onClick={() => this.props.onClick(this.props.userData.id)}>Delete</button>
                     </div>
                 </td>
             </tr>

@@ -1,0 +1,53 @@
+.LoginPage {
+    background-color: #F3F3EB;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginForm {
+    display: block;
+    position: relative;
+    background-color: #00577A;
+    width: 360px;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.LoginForm .FormTitle {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.LoginForm .FormGroup {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.LoginForm .FormGroup label {
+    display: block;
+}
+
+.LoginForm .FormGroup input {
+    display: block;
+    width: 100%;
+    /*border: none;*/
+}
+
+.LoginForm .FormSubmit {
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    height: 45px;
+    background-color: #00A8EA;
+    color: white;
+    font-size: 20px;
+}
+
+.LoginForm .FormSubmit:hover {
+    background-color: #47CAFF;
+}
