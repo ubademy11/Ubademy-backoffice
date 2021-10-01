@@ -17,15 +17,7 @@ jobs:
         uses: actions/setup-node@v2
       
       - name: Setup dependencies
-        run: |
-          sudo npm install -g npm
-          npm -v
-          node -v
-          sudo npm install --global yarn
-          yarn --version
-          yarn --frozen-lockfile
-      - name: Run tests
-        run: yarn test
+        run: #tests
   deploy:
     runs-on: ubuntu-latest
     needs: tests
