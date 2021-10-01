@@ -1,4 +1,4 @@
-.LoginPage {
+.SignInPage {
     background-color: #F3F3EB;
     width: 100vw;
     height: 100vh;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.LoginForm {
+.SignInForm {
     display: block;
     position: relative;
     background-color: white;
@@ -18,12 +18,12 @@
     border-radius: 5px;
 }
 
-.LoginForm .FormLogo {
+.SignInForm .FormLogo {
     margin: 10px auto;
     text-align: center;
     display: block;
 }
-.LoginForm .FormInfo {
+.SignInForm .FormInfo {
     border-bottom: solid 1px #d1d7dc;
     color: #1c1d1f;
     display: block;
@@ -32,7 +32,7 @@
     padding-bottom: 16px;
 }
 
-.LoginForm .FormGroup {
+.SignInForm .FormGroup {
     display: block;
     margin-bottom: 15px;
 }
@@ -41,13 +41,13 @@
     padding: 5px;
 }
 
-.LoginForm .FormGroup input {
+.SignInForm .FormGroup input {
     display: block;
     width: 100%;
     /*border: none;*/
 }
 
-.LoginForm .FormSubmit {
+.SignInForm .FormSubmit {
     border: none;
     margin-top: 20px;
     width: 100%;
@@ -57,24 +57,19 @@
     font-size: 20px;
 }
 
-.LoginForm .FormSubmit:hover {
+.SignInForm .FormSubmit:hover {
     background-color: #5624d0;
 }
 
-.goToSignIn {
+.goToForgotPassword {
     cursor: pointer;
     font-weight: bold;
     color: #5624d0;
+    margin-left: 30px;
 }
 
-.termsAndPrivacy {
-    font-size: 11px;
-    color: #1c1d1f;
-    width: 80%;
-    margin: 3px;
-}
-
-.privacyPolicy {
+.goToAnotherAccount {
     cursor: pointer;
+    font-weight: bold;
     color: #5624d0;
 }
