@@ -1,0 +1,18 @@
+.Navbar {
+    background-color: #004966;/*#008AAD*/
+    height:50px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+.Navbar .MenuIcon {
+    display: inline;
+    outline: none;
+    color: white;
+}
+
+.Navbar h4 {
+    margin: 0;
+    color: white;
+}
