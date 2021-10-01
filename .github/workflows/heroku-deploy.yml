@@ -7,17 +7,16 @@ name: Push Container to Heroku
 on: [push]
 
 jobs:
-  custom-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        
+      - name: Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          fetch-depth: 0
-      - name: Add Heroku remote
-        run: heroku git:remote --app $HEROKU_APP_NAME
-        env:
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      - name: Push new version to Heroku
-        run: git push heroku master
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}} 
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          dontautocreate: true
       
