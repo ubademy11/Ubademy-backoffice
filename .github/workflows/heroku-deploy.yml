@@ -27,16 +27,6 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      - name: Add Heroku remote
-        run: heroku git:remote --app $HEROKU_APP_NAME
-        env:
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      - name: Setting credentials
-        run: git config --global user.email ${{ secrets.HEROKU_EMAIL }}
-      - name: Add changes
-        run: git add .
-      - name: Commit changes
-        run: git commit -m "new version"
       - name: Push new version to Heroku
         run: git push heroku master
       
