@@ -19,7 +19,7 @@ export default function Login() {
     return (
         <div className="LoginPage">
             <form className="LoginForm" onSubmit={handleSubmit}>
-                <h2 className="FormTitle">Ubademy</h2>
+                <img className="FormLogo" src={"https://i.ibb.co/GChKvms/Whats-App-Image-2021-10-01-at-16-32-08.jpg"}/>
                 <h4 className="FormInfo">Inscríbete y comienza a aprender.</h4>
 
                 <div className="FormGroup">
@@ -28,7 +28,7 @@ export default function Login() {
                         name="name" 
                         type="text" 
                         value={name} 
-                        placeholder="Name" 
+                        placeholder="Nombre completo" 
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
@@ -39,7 +39,7 @@ export default function Login() {
                         name="email" 
                         type="text" 
                         value={email} 
-                        placeholder="Email" 
+                        placeholder="Correo electrónico" 
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
@@ -50,13 +50,13 @@ export default function Login() {
                         name="password" 
                         type="password" 
                         text="password" 
-                        placeholder="Password" 
+                        placeholder="Contraseña" 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 
-                <input className="FormSubmit" type="submit" value="Login"/>
+                <input className="FormSubmit" type="submit" value="Regístrate"/>
 
                 <div className="termsAndPrivacy">
                     <text>Al registrarte, aceptas nuestras </text>
@@ -67,7 +67,7 @@ export default function Login() {
 
             <div>
                 <text><br></br>¿Ya tienes una cuenta? </text>
-                <text className="goToSignIn" onClick={goToSignIn}>Inicia sesión</text>
+                <text className="goToSignIn" onClick={goToSignIn}>Iniciar sesión</text>
             </div>
 
             {/*<Link to="/Users">Login</Link>*/}

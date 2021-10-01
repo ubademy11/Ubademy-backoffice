@@ -18,9 +18,10 @@
     border-radius: 5px;
 }
 
-.LoginForm .FormTitle {
+.LoginForm .FormLogo {
     margin: 10px auto;
     text-align: center;
+    display: block;
 }
 .LoginForm .FormInfo {
     border-bottom: solid 1px #d1d7dc;
@@ -28,7 +29,7 @@
     display: block;
     font-weight: 700;
     font-size: 14px;
-    padding: 24px 64px 24px 24px;
+    padding-bottom: 16px;
 }
 
 .LoginForm .FormGroup {
