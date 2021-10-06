@@ -89,15 +89,6 @@ class Courses extends React.Component {
 
             <div className={this.state.welcomeOpen ? 'categoryInfo-hidden' : 'categoryInfo'}>
 
-                <TouchCarousel
-                    component={CarouselContainer}
-                    cardCount={courses_fake.length}
-                    cardSize={375}
-                    renderCard={renderCard}
-                    loop
-                    autoplay={3000}
-                />
-
                 <table className="CourseTable table table-striped table-bordered">
                     <thead>
                         <tr>
