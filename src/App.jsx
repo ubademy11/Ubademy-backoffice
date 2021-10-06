@@ -30,8 +30,8 @@ class App extends React.Component{
         return (
             <Router>
                 <Switch>
-                    <Route path="/" exact component={Login} />
-                    <Route path="/signIn" exact component={SignIn} />
+                    <Route path="/" exact component={SignIn} />
+                    <Route path="/login" exact component={Login} />
                     <div className = "App">
                         <Navbar onClick={this.toggleSidebar.bind(this)}/>
                             <div className="MainContainer">
