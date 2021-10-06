@@ -1,0 +1,78 @@
+.Content {
+    flex: 1;
+    background-color: #f9f9f9; 
+}
+
+.Courses .CourseTable {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.Categories {
+    align-items: center;
+}
+
+.courses-title {
+    margin-left: 50%;
+    text-decoration: none;
+    color: #ccc;
+    font: 30px/1 Helvetica, Verdana, sans-serif;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    padding: 1%;
+}
+
+.courses-title:hover {
+    margin-left: 50%;
+    font-family: inherit;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.category-list-div {
+    display: flow-root;
+    background-color:#f9f9f9;
+}
+
+.category-list-style {
+    overflow: auto;
+    list-style-type: none;
+}
+
+.category {
+    height: 25px;
+    float: left;
+    margin-right: 0px;
+    border-right: 1px solid #aaa;
+    padding: 0 20px;
+}
+
+.li:last-child {
+    border-right: none;
+}
+
+.goToCategory {
+    text-decoration: none;
+    color: #ccc;
+    font: 25px/1 Helvetica, Verdana, sans-serif;
+    text-transform: uppercase;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.goToCategory:hover {
+    color: #666;
+}
+
+.li.active a {
+font-weight: bold;
+color: #333;
+}
+
+.category-list-div-hidden {
+    display: none;
+}

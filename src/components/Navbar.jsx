@@ -11,10 +11,9 @@ class Navbar extends React.Component {
     render(){
         return (
         <div className="Navbar">
-                <IconButton className='MenuIcon' onClick={() => this.props.onClick()}>
-                    <MenuIcon/>
-                </IconButton>
-                <h4>Ubademy</h4>
+                <href className="header-logo-info">
+                    <img className="header-logo" src={"https://i.ibb.co/GChKvms/Whats-App-Image-2021-10-01-at-16-32-08.jpg"}></img>
+                </href>
         </div>
     )}
 }

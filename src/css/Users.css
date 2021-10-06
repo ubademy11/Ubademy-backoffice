@@ -1,0 +1,9 @@
+.Content {
+    flex: 1;
+    background-color: #f9f9f9; 
+}
+
+.Users .UserTable {
+    width: 90%;
+    margin: 0 auto;
+}

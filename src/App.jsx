@@ -6,24 +6,18 @@ import "./css/Sidebar.css";
 import "./css/Navbar.css";
 import "./css/Login.css";
 import "./css/SignIn.css";
+import "./css/Courses.css";
+import "./css/Users.css";
 import Sidebar from "./components/Sidebar.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Users from "./pages/Users.jsx";
+import Courses from "./pages/Courses.jsx";
 import Login from "./pages/Login.jsx";
 import SignIn from "./pages/SignIn.jsx";
 
 class App extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            sidebarOpen: true,
-        };
-    }
-
-    toggleSidebar() {
-        this.setState(prevState => ({
-            sidebarOpen: !prevState.sidebarOpen
-        }));
     }
 
     render() {
@@ -33,11 +27,12 @@ class App extends React.Component{
                     <Route path="/" exact component={SignIn} />
                     <Route path="/login" exact component={Login} />
                     <div className = "App">
-                        <Navbar onClick={this.toggleSidebar.bind(this)}/>
+                        <Navbar/>
                             <div className="MainContainer">
-                                <Sidebar className={this.state.sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}/>
+                                <Sidebar className='Sidebar closed'/>
                                 <div className="Content">
                                     <Route path='/users' exact component={Users} />
+                                    <Route path='/courses' exact component={Courses} />
                                 </div>
                             </div>
                         
