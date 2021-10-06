@@ -13,9 +13,9 @@
 }
 
 .courses-title {
-    margin-left: 50%;
+    margin-left: 45%;
     text-decoration: none;
-    color: #ccc;
+    color: #333;
     font: 30px/1 Helvetica, Verdana, sans-serif;
     text-transform: uppercase;
     transition: all 0.5s ease;
@@ -23,7 +23,6 @@
 }
 
 .courses-title:hover {
-    margin-left: 50%;
     font-family: inherit;
     color: blueviolet;
     cursor: pointer;
@@ -66,6 +65,7 @@
 
 .goToCategory:hover {
     color: #666;
+    cursor: pointer;
 }
 
 .li.active a {
@@ -74,5 +74,21 @@ color: #333;
 }
 
 .category-list-div-hidden {
+    display: none;
+}
+
+.welcome-categories {
+    display: block;
+}
+
+.welcome-categories-hidden {
+    display: none;
+}
+
+.categoryInfo {
+    display: block;
+}
+
+.categoryInfo-hidden {
     display: none;
 }
