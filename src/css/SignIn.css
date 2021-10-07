@@ -105,3 +105,11 @@ header {
 .lock-logo {
     height: 50%;
 }
+
+.SignInErrorMessage {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    color: red;
+}
