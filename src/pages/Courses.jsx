@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Course from "../components/Course.jsx";
+import Course from "../components/courses/Course.jsx";
 import { Carousel } from 'react-carousel-minimal';
+import CoursesMenu from '../components/courses/CoursesMenu';
 
 class Courses extends React.Component {
     constructor(props){
@@ -39,52 +40,7 @@ class Courses extends React.Component {
         return (
         <div className='Courses'>
             
-            <div className="Categories">
-                <h2 className="courses-title" onClick={this.toggleCategories.bind(this)}>CURSOS</h2>
-                <div className={this.state.categoriesOpen ? 'category-list-div' : 'category-list-div-hidden'}>
-                    <nav className="category-list-nav">
-                        <ul className="category-list-style">
-                            <li className="category"><a className="goToCategory" href="./info" onClick={this.showCategory.bind(this)} href="#">Ingeniería</a></li>
-                            <li className="category"><a className="goToCategory" onClick={this.showCategory.bind(this)} >Moda</a></li>
-                            <li className="category"><a className="goToCategory" onClick={this.showCategory.bind(this)}>Crypto</a></li>
-                            <li className="category"><a className="goToCategory">Negocios</a></li>
-                            <li className="category"><a className="goToCategory">Info db</a></li>
-                            <li className="category"><a className="goToCategory">Info db</a></li>
-                            <li className="category"><a className="goToCategory">Info db</a></li>
-                            <li className="category"><a className="goToCategory">Info db</a></li>
-                            <li className="category"><a className="goToCategory">Info db</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div className={this.state.welcomeOpen ? 'welcome-categories' : 'welcome-categories-hidden'}>
-                <Carousel
-                    data={data}
-                    time={2000}
-                    width="850px"
-                    height="500px"
-                    captionStyle={captionStyle}
-                    radius="7px"
-                    slideNumber={true}
-                    slideNumberStyle={slideNumberStyle}
-                    captionPosition="bottom"
-                    automatic={true}
-                    dots={true}
-                    pauseIconColor="white"
-                    pauseIconSize="40px"
-                    slideBackgroundColor="white"
-                    slideImageFit="cover"
-                    thumbnails={true}
-                    thumbnailWidth="100px"
-                    style = {{
-                        textAlign: "center",
-                        maxWidth: "850px",
-                        maxHeight: "500px",
-                        margin: "40px auto",
-                    }}
-                />
-            </div>
+            <CoursesMenu></CoursesMenu>
 
             <div id='categoryInfo' className={this.state.welcomeOpen ? 'categoryInfo-hidden' : 'categoryInfo'}>
 
