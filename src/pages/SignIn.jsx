@@ -43,9 +43,9 @@ class SignIn extends React.Component {
         //window.location.href = "./users";
     };
 
-    goToLogin = event => {
+    goToSignup = event => {
         event.preventDefault();
-        window.location.href = "./login"; 
+        window.location.href = "./signup"; 
     }
 
     render() {
@@ -55,7 +55,7 @@ class SignIn extends React.Component {
                     <href className="header-logo-info">
                         <img className="header-logo" src={"https://i.ibb.co/GChKvms/Whats-App-Image-2021-10-01-at-16-32-08.jpg"}></img>
                     </href>
-                    <button className="headerLogin" onClick={this.goToLogin}>
+                    <button className="headerLogin" onClick={this.goToSignup}>
                         <img className="lock-logo" src={"data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxNzIgMTcyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik04NiwxMS40NjY2N2MtMjIuMDk4MTgsMCAtNDAuMTMzMzMsMTguMDM1MTUgLTQwLjEzMzMzLDQwLjEzMzMzdjExLjQ2NjY3aC0xMS40NjY2N2MtNi4zMzUzMywwIC0xMS40NjY2Nyw1LjEzMTMzIC0xMS40NjY2NywxMS40NjY2N3Y2OC44YzAsNi4zMzUzMyA1LjEzMTMzLDExLjQ2NjY3IDExLjQ2NjY3LDExLjQ2NjY3aDEwMy4yYzYuMzM1MzMsMCAxMS40NjY2NywtNS4xMzEzMyAxMS40NjY2NywtMTEuNDY2Njd2LTY4LjhjMCwtNi4zMzUzMyAtNS4xMzEzMywtMTEuNDY2NjcgLTExLjQ2NjY3LC0xMS40NjY2N2gtMTEuNDY2Njd2LTExLjQ2NjY3YzAsLTIxLjM3NjI2IC0xNi45OTAyNywtMzguNTkzNTYgLTM4LjA5NTMxLC0zOS43MTkwMWMtMC42NDg0MSwtMC4yNjExOCAtMS4zMzkxMSwtMC40MDE2IC0yLjAzODAyLC0wLjQxNDMyek04NiwyMi45MzMzM2MxNS45MDIzNSwwIDI4LjY2NjY3LDEyLjc2NDMxIDI4LjY2NjY3LDI4LjY2NjY3djExLjQ2NjY3aC01Ny4zMzMzM3YtMTEuNDY2NjdjMCwtMTUuOTAyMzUgMTIuNzY0MzEsLTI4LjY2NjY3IDI4LjY2NjY3LC0yOC42NjY2N3oiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg=="}></img>
                          Regístrate
                     </button>
