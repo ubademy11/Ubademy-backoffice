@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Course from "../components/courses/Course.jsx";
-import { Carousel } from 'react-carousel-minimal';
 import CoursesMenu from '../components/courses/CoursesMenu';
 
 class Courses extends React.Component {
