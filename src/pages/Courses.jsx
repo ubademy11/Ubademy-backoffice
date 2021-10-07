@@ -1,8 +1,7 @@
 import React from 'react';
-import Course from "../components/Course.jsx";
 
+import Course from "../components/Course.jsx";
 import { Carousel } from 'react-carousel-minimal';
-import TouchCarousel from 'react-touch-carousel'
 
 class Courses extends React.Component {
     constructor(props){
@@ -45,7 +44,7 @@ class Courses extends React.Component {
                 <div className={this.state.categoriesOpen ? 'category-list-div' : 'category-list-div-hidden'}>
                     <nav className="category-list-nav">
                         <ul className="category-list-style">
-                            <li className="category"><a className="goToCategory" onClick={this.showCategory.bind(this)} href="#">Ingeniería</a></li>
+                            <li className="category"><a className="goToCategory" href="./info" onClick={this.showCategory.bind(this)} href="#">Ingeniería</a></li>
                             <li className="category"><a className="goToCategory" onClick={this.showCategory.bind(this)} >Moda</a></li>
                             <li className="category"><a className="goToCategory" onClick={this.showCategory.bind(this)}>Crypto</a></li>
                             <li className="category"><a className="goToCategory">Negocios</a></li>
@@ -61,40 +60,40 @@ class Courses extends React.Component {
 
             <div className={this.state.welcomeOpen ? 'welcome-categories' : 'welcome-categories-hidden'}>
                 <Carousel
-                data={data}
-                time={2000}
-                width="850px"
-                height="500px"
-                captionStyle={captionStyle}
-                radius="10px"
-                slideNumber={true}
-                slideNumberStyle={slideNumberStyle}
-                captionPosition="bottom"
-                automatic={true}
-                dots={true}
-                pauseIconColor="white"
-                pauseIconSize="40px"
-                slideBackgroundColor="darkgrey"
-                slideImageFit="cover"
-                thumbnails={true}
-                thumbnailWidth="100px"
-                style={{
-                textAlign: "center",
-                maxWidth: "850px",
-                maxHeight: "500px",
-                margin: "40px auto",
-                }}
-            />
+                    data={data}
+                    time={2000}
+                    width="850px"
+                    height="500px"
+                    captionStyle={captionStyle}
+                    radius="7px"
+                    slideNumber={true}
+                    slideNumberStyle={slideNumberStyle}
+                    captionPosition="bottom"
+                    automatic={true}
+                    dots={true}
+                    pauseIconColor="white"
+                    pauseIconSize="40px"
+                    slideBackgroundColor="white"
+                    slideImageFit="cover"
+                    thumbnails={true}
+                    thumbnailWidth="100px"
+                    style = {{
+                        textAlign: "center",
+                        maxWidth: "850px",
+                        maxHeight: "500px",
+                        margin: "40px auto",
+                    }}
+                />
             </div>
 
-            <div className={this.state.welcomeOpen ? 'categoryInfo-hidden' : 'categoryInfo'}>
+            <div id='categoryInfo' className={this.state.welcomeOpen ? 'categoryInfo-hidden' : 'categoryInfo'}>
 
                 <table className="CourseTable table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>Teacher</th>
+                            <th>Time</th>
                             <th>Options</th>
                         </tr>
                     </thead>
@@ -138,11 +137,12 @@ const data = [
 
 //DATA HARDCODEADA -- REMPLAZO POR DB
 const courses_fake = [
-    {id: 1, firstName: "Pedro", lastName: "Lopez", email: "pedro.cabj@test.com", role: "User"},
-    {id: 2, firstName: "Victoria", lastName: "Gonzalez", email: "vic2000@test.com", role: "User"},
-    {id: 3, firstName: "Juan", lastName: "Gutierrez", email: "juan@test.com", role: "Admin"},
-    {id: 4, firstName: "Lucas", lastName: "Garcia", email: "lucasgarcia@test.com", role: "User"},
-    {id: 5, firstName: "Sofia", lastName: "Fernandez", email: "sofer@test.com", role: "Admin"},
+    {id: 1, name: "ingenieria", teacher: "Lopez", time: "lunes", period: "User"},
+    {id: 2, name: "moda", teacher: "Gonzalez", time: "miercoles", period: "User"},
+    {id: 3, name: "negocios", teacher: "Gutierrez", time: "viernes", period: "Admin"},
+    {id: 4, name: "bla", teacher: "Garcia", time: "asincronico", period: "User"},
+    {id: 5, name: "bla", teacher: "Fernandez", time: "sabados", period: "Admin"},
 ];
+
 
 export default Courses;
