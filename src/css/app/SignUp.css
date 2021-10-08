@@ -1,4 +1,4 @@
-.LoginPage {
+.SignupPage {
     background-color: #F3F3EB;
     width: 100vw;
     height: 100vh;
@@ -9,7 +9,7 @@
     overflow-y:auto;
 }
 
-.LoginForm {
+.SignupForm {
     display: block;
     position: relative;
     background-color: white;
@@ -19,12 +19,12 @@
     border-radius: 5px;
 }
 
-.LoginForm .FormLogo {
+.SignupForm .FormLogo {
     margin: 10px auto;
     text-align: center;
     display: block;
 }
-.LoginForm .FormInfo {
+.SignupForm .FormInfo {
     border-bottom: solid 1px #d1d7dc;
     color: #1c1d1f;
     display: block;
@@ -33,7 +33,7 @@
     padding-bottom: 16px;
 }
 
-.LoginForm .FormGroup {
+.SignupForm .FormGroup {
     display: block;
     margin-bottom: 15px;
 }
@@ -42,13 +42,13 @@
     padding: 5px;
 }
 
-.LoginForm .FormGroup input {
+.SignupForm .FormGroup input {
     display: block;
     width: 100%;
     /*border: none;*/
 }
 
-.LoginForm .FormSubmit {
+.SignupForm .FormSubmit {
     border: none;
     margin-top: 20px;
     width: 100%;
@@ -58,7 +58,7 @@
     font-size: 20px;
 }
 
-.LoginForm .FormSubmit:hover {
+.SignupForm .FormSubmit:hover {
     background-color: #5624d0;
 }
 
