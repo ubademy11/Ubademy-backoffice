@@ -3,12 +3,16 @@ import DataTable from 'react-data-table-component';
 
 class DataTableAdmin extends React.Component{
 
+    constructor(props){
+        super(props);
+    }
+
     handleButtonClick = (event) => {
         event.preventDefault();
-        window.location.href = "./ingenieria";
-        console.log('clicked');
+        window.location.href = "./ingenieria"; // TODO GO TO PARTICULAR COURSE VIEW
     };
-    
+
+    //----------- TODO REMOVE AND CONNECT WITH API INFO ---------
     columns = [
         {
             name: 'Title',
@@ -43,7 +47,8 @@ class DataTableAdmin extends React.Component{
             year: '1984',
         },
     ]
-    
+    //---------- END OF REMOVE ---------------------------------------------------
+
     paginationComponentOptions = {
         rowsPerPageText: 'Filas por página',
         rangeSeparatorText: 'de',
@@ -54,10 +59,18 @@ class DataTableAdmin extends React.Component{
     render() {
         return(
             <DataTable 
-                columns={this.columns} 
-                data={this.datatableinfo}
+                title={this.props.title}
+                columns={this.columns} //TODO REPLACE WITH {this.props.columns} 
+                data={this.datatableinfo} //TODO REPLACE WITH {this.props.data}
                 pagination 
-                paginationComponentOptions={this.paginationComponentOptions}
+                paginationComponentOptions={this.paginationComponentOptions} //REPLACE WITH paginationServer
+                /* ADD THIS WHEN CONNECTION IS ESTABLISHED
+                paginationServer
+                paginationTotalRows={totalRows}
+                onChangeRowsPerPage={handlePerRowsChange}
+                onChangePage={handlePageChange}
+                */
+
             />
         )
     }
