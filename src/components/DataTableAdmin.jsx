@@ -62,6 +62,8 @@ class DataTableAdmin extends React.Component{
                 title={this.props.title}
                 columns={this.columns} //TODO REPLACE WITH {this.props.columns} 
                 data={this.datatableinfo} //TODO REPLACE WITH {this.props.data}
+                fixedHeader={true}
+                fixedHeaderScrollHeight="80vh"
                 pagination 
                 paginationComponentOptions={this.paginationComponentOptions} //REPLACE WITH paginationServer
                 /* ADD THIS WHEN CONNECTION IS ESTABLISHED
