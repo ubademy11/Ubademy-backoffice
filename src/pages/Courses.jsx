@@ -1,15 +1,16 @@
 import React from 'react';
+import axios from 'axios';
 
 import DataTableAdmin from '../components/DataTableAdmin.jsx';
 
-const USERS_ENDPOINT_URL = ""; //TODO CONECTAR API 
+const COURSES_ENDPOINT_URL = ""; //TODO CONECTAR API 
 
-class Users extends React.Component {
+class Courses extends React.Component {
     constructor(props){
         super(props);
     }
 
-    fetchUsers = async page => {
+    fetchCourses = async page => {
         /*
 		setLoading(true);
 
@@ -50,15 +51,17 @@ class Users extends React.Component {
 
     render() { 
         return (
-        <div className='Users'>
+        <div className='Courses'>
+            
             <DataTableAdmin 
-                className="data-table-users"
-                title="Users"
-                data={this.fetchUsers}
+                className="data-table-courses"
+                title="Courses"
+                data={this.fetchCourses}
                 columns={this.setColumns}
             ></DataTableAdmin>
+
         </div>
     )}
 }
 
-export default Users;
+export default Courses;

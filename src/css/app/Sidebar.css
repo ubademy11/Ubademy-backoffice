@@ -1,11 +1,8 @@
 .Sidebar {
     width: 14rem;
-    background-color: #0074A3;
+    background-color: #dee2e6;;
 }
-.Sidebar.opened {
-    width: 14rem;
-    transition: all 0.1s ease 0s;
-}
+
 .Sidebar.closed {
     width: 3rem;
     transition: all 0.1s ease 0s;
@@ -40,7 +37,7 @@
 
 .SidebarList .SidebarItem:hover {
     cursor: pointer;
-    background-color: #00577A; 
+    background-color: #494a4b; 
 }
 
 .SidebarItem .ItemIcon {

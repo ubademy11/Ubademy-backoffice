@@ -1,0 +1,29 @@
+.Navbar {
+    background-color: #fff;
+    height:50px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+.Navbar .MenuIcon {
+    display: inline;
+    outline: none;
+    color: white;
+}
+
+
+.header-logo {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: 70%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}
+
+.header-logo-info {
+    height: 100%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
