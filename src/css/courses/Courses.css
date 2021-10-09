@@ -3,30 +3,7 @@
     background-color: #f9f9f9; 
 }
 
-.Courses .CourseTable {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.Categories {
-    align-items: center;
-}
-
-
-.category-list-div {
-    display: flow-root;
-    background-color:#f9f9f9;
-}
-
-.category-list-div-hidden {
-    display: none;
-}
-
-.welcome-categories {
-    display: block;
-}
-
-.welcome-categories-hidden {
-    display: none;
+.data-table-courses {
+    padding: auto;
 }
 
