@@ -38,7 +38,7 @@ export default function Login() {
                         name="name" 
                         type="text" 
                         value={name} 
-                        placeholder="Nombre completoo0000 propbando" 
+                        placeholder="Nombre completo" 
                         minlength="8"
                         onChange={(e) => setName(e.target.value)}
                     />
