@@ -6,6 +6,7 @@ import "./css/Sidebar.css";
 import "./css/Navbar.css";
 import "./css/Login.css";
 import "./css/SignIn.css";
+import "./css/Course.css";
 import Sidebar from "./components/Sidebar.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Users from "./pages/Users.jsx";
