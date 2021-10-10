@@ -3,23 +3,33 @@ import axios from 'axios';
 
 import DataTableAdmin from '../components/DataTableAdmin.jsx';
 
-const COURSES_ENDPOINT_URL = ""; //TODO CONECTAR API 
+const COURSES_ENDPOINT_URL = "http://localhost:3002/course";
 
 class Courses extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            courses_list : [],
+            
+        }
     }
 
-    fetchCourses = async page => {
-        /*
-		setLoading(true);
+    componentDidMount(prevProps) {
+        this.fetchCourses();
+    }
 
-		const response = await axios.get(`https://reqres.in/api/users?page=${page}&per_page=${perPage}&delay=1`);
-
+    fetchCourses = async () => {
+        
+		//setLoading(true);
+		const response = await axios.get(COURSES_ENDPOINT_URL);
+        this.setState({
+            courses_list: response //.courseList TODO FIX AXIOS PROPERTY
+        })
+/*
 		setData(response.data.data);
 		setTotalRows(response.data.total);
-		setLoading(false);
-        */
+		setLoading(false);*/
 	};
 
     //ADD AND SEND TO DATA TABLE ADMIN BY PROPS
