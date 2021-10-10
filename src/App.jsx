@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar.jsx";
 import Users from "./pages/Users.jsx";
 import Login from "./pages/Login.jsx";
 import SignIn from "./pages/SignIn.jsx";
+import Course from "./pages/Course.jsx";
 
 class App extends React.Component{
     constructor(props){
@@ -32,6 +33,7 @@ class App extends React.Component{
                 <Switch>
                     <Route path="/" exact component={SignIn} />
                     <Route path="/login" exact component={Login} />
+                    <Route path="/dummyCourse" exact component={Course} />
                     <div className = "App">
                         <Navbar onClick={this.toggleSidebar.bind(this)}/>
                             <div className="MainContainer">
