@@ -25,7 +25,7 @@ https://www.udemy.com/course/aprende-el-lenguaje-de-programacion-python3-practic
     color: #a435f0;
     font-weight: 700;
     font-size: 14px;
-    margin-top: -7%;
+    margin-top: 4%;
     margin-left: -85%;
 }
 
@@ -73,6 +73,59 @@ https://www.udemy.com/course/aprende-el-lenguaje-de-programacion-python3-practic
     position: absolute;
     margin-top: -8%;
     margin-left: 14%;
+}
+
+.adminInfo {
+    display: block;
+}
+
+.adminInfo .adminTitle{
+    border-bottom: solid 1px #d1d7dc;
+    padding-bottom: 10px;
+    color: #1c1d1f;
+    font-weight: 700;
+    font-size: 26px;
+    position: absolute;
+    margin-top: -2%;
+    margin-left: -45%;
+    line-height: 100%;
+}
+
+.adminInfo .adminPhoto{
+    display: block;
+    margin-top: 22%;
+    margin-left: -610%;
+}
+
+.adminInfo .adminName {
+    position: absolute;
+    color: #5c0099;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -7%;
+    margin-left: -35%;
+    /*esto podria ser un link al profesor*/
+    text-decoration: underline;
+}
+
+.adminInfo .adminGrades{
+    color: #1c1d1f;
+    font-weight: 300;
+    font-size: 14px;
+    padding-bottom: 1px;
+    position: absolute;
+    margin-top: -4.5%;
+    margin-left: -35%;
+}
+
+.adminInfo .adminDetails{
+    color: #1c1d1f;
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 1px;
+    position: absolute;
+    margin-top: -2.5%;
+    margin-left: -33%;
 }
 
 header {

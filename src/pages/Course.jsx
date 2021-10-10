@@ -25,6 +25,16 @@ export default function Login() {
                 <div className="courseDetails">Creado por Alvaro Chirou • 380.000+ Students Worldwide, Academia AC, Universidad Hacking, Walter Coto.</div><br/>
                 <div className="courseDetails">Español.</div>                
             </div>
+
+            <div className="adminInfo">
+                <div className="adminTitle">Instructor</div>
+                <div><img className="adminPhoto" src={"https://i.ibb.co/Pjjh5TY/admin-dummy100100.png"}></img></div>
+                <div className="adminName">Alvaro Chirou • 380.000+ Students Worldwide</div>
+                <div className="adminGrades">Digital Technology Teacher | Seguridad informática y Forense</div>
+                <div className="adminDetails">Calificacion del instructor: 4,5</div><br/>
+                <div className="adminDetails">51 cursos</div>
+            </div>
+
             {/*<Link to="/Users">Login</Link>*/}
         </div>
         
