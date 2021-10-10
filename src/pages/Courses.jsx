@@ -10,7 +10,7 @@ class Courses extends React.Component {
         super(props);
 
         this.state = {
-            courses_list : [],
+            courseList : [],
             
         }
     }
@@ -22,11 +22,20 @@ class Courses extends React.Component {
     fetchCourses = async () => {
         
 		//setLoading(true);
-		const response = await axios.get(COURSES_ENDPOINT_URL);
-        this.setState({
+
+        try {
+            const response = await axios.get(COURSES_ENDPOINT_URL);
+            this.setState({ courseList : response.data.courses });
+            console.log(this.state.courseList);
+        } catch (err) {
+            console.log("Error al buscar cursos");
+            console.log(err);
+        }
+		
+        /*this.setState({
             courses_list: response //.courseList TODO FIX AXIOS PROPERTY
-        })
-/*
+        })*/
+        /*
 		setData(response.data.data);
 		setTotalRows(response.data.total);
 		setLoading(false);*/
