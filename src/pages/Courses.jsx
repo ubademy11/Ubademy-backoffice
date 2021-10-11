@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
-import DataTableAdmin from '../components/DataTableAdmin.jsx';
+import { CircularProgress } from '@material-ui/core';
+import CourseTable from '../components/courses/CourseTable.jsx';
 
 const COURSES_ENDPOINT_URL = "http://localhost:3002/course";
 
@@ -10,36 +10,38 @@ class Courses extends React.Component {
         super(props);
 
         this.state = {
-            courseList : [],
-            
-        }
+            courseList: [],
+            loading: true,
+        };
     }
 
-    componentDidMount(prevProps) {
-        this.fetchCourses();
-    }
-
-    fetchCourses = async () => {
+    fetchUsers = async () => {
         
 		//setLoading(true);
 
         try {
             const response = await axios.get(COURSES_ENDPOINT_URL);
-            this.setState({ courseList : response.data.courses });
+            console.log(response);
+            this.setState({ 
+                courseList : response.data.courses,
+                loading: false
+            });
+            
             console.log(this.state.courseList);
         } catch (err) {
-            console.log("Error al buscar cursos");
+            console.log("Error al buscar los cursos");
             console.log(err);
         }
-		
-        /*this.setState({
-            courses_list: response //.courseList TODO FIX AXIOS PROPERTY
-        })*/
-        /*
-		setData(response.data.data);
-		setTotalRows(response.data.total);
-		setLoading(false);*/
-	};
+    }
+
+    componentDidMount(prevProps) {
+        this.fetchUsers();
+    }
+
+    /*componentDidUpdate(prevProps) {
+        if(this.state.loading && this.state.courseList.length > 0)
+            this.setState({loading: false});
+    }*/
 
     //ADD AND SEND TO DATA TABLE ADMIN BY PROPS
     /*
@@ -63,23 +65,21 @@ class Courses extends React.Component {
 	}, []);
      */
 
-
-    setColumns = () => {
-        //return columns;
-    }
-
     render() { 
+        let vista;
+        if(this.state.loading)
+            vista = <CircularProgress />; //TODO: cambiar ubicacion
+        else 
+            vista = <CourseTable 
+                        className="data-table-courses"
+                        title="Courses"
+                        columns={this.columns}
+                        data={this.state.courseList}
+                    ></CourseTable>;
         return (
-        <div className='Courses'>
-            
-            <DataTableAdmin 
-                className="data-table-courses"
-                title="Courses"
-                data={this.fetchCourses}
-                columns={this.setColumns}
-            ></DataTableAdmin>
-
-        </div>
+            <div className='Users'>
+                {vista}
+            </div>
     )}
 }
 

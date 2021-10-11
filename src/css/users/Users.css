@@ -3,7 +3,21 @@
     background-color: #f9f9f9; 
 }
 
+.Users {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
 .Users .UserTable {
     width: 90%;
     margin: 0 auto;
+}
+
+.Users .MuiCircularProgress-root {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: #9c38e6;
 }

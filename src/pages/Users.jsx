@@ -1,25 +1,39 @@
 import React from 'react';
+import axios from 'axios';
+import { CircularProgress } from '@material-ui/core';
+import UserTable from '../components/users/UserTable.jsx';
 
-import DataTableAdmin from '../components/DataTableAdmin.jsx';
-
-const USERS_ENDPOINT_URL = ""; //TODO CONECTAR API 
+const USERS_ENDPOINT_URL = "http://localhost:3002/user"; //TODO CONECTAR API 
 
 class Users extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            userList: [],
+            loading: true,
+        };
     }
 
-    fetchUsers = async page => {
-        /*
-		setLoading(true);
+    fetchUsers = async () => {
+        
+		//setLoading(true);
 
-		const response = await axios.get(`https://reqres.in/api/users?page=${page}&per_page=${perPage}&delay=1`);
+        try {
+            const response = await axios.get(USERS_ENDPOINT_URL);
+            this.setState({ 
+                userList: response.data.users,
+                loading: false
+            });
+            console.log(this.state.userList);
+        } catch (err) {
+            console.log("Error al buscar usuarios");
+            console.log(err);
+        }
+    }
 
-		setData(response.data.data);
-		setTotalRows(response.data.total);
-		setLoading(false);
-        */
-	};
+    componentDidMount(prevProps) {
+        this.fetchUsers();
+    }
 
     //ADD AND SEND TO DATA TABLE ADMIN BY PROPS
     /*
@@ -43,21 +57,27 @@ class Users extends React.Component {
 	}, []);
      */
 
-
-    setColumns = () => {
-        //return columns;
-    }
+    paginationComponentOptions = {
+        rowsPerPageText: 'Filas por página',
+        rangeSeparatorText: 'de',
+        selectAllRowsItem: true,
+        selectAllRowsItemText: 'Todos',
+    };
 
     render() { 
+        let vista;
+        if(this.state.loading)
+            vista = <CircularProgress />; //TODO: cambiar ubicacion
+        else 
+            vista = <UserTable 
+                        className="data-table-users"
+                        title="Users"
+                        data={this.state.userList}
+                    ></UserTable>;
         return (
-        <div className='Users'>
-            <DataTableAdmin 
-                className="data-table-users"
-                title="Users"
-                data={this.fetchUsers}
-                columns={this.setColumns}
-            ></DataTableAdmin>
-        </div>
+            <div className='Users'>
+                {vista}
+            </div>
     )}
 }
 

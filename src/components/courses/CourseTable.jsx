@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 
-class DataTableAdmin extends React.Component{
+class CourseTable extends React.Component{
 
     constructor(props){
         super(props);
@@ -15,38 +15,39 @@ class DataTableAdmin extends React.Component{
     //----------- TODO REMOVE AND CONNECT WITH API INFO ---------
     columns = [
         {
+            name: 'Id',
+            selector: row => row.id,
+            sortable: true
+        },
+        {
             name: 'Title',
             selector: row => row.title,
             sortable: true
         },
         {
-            name: 'Year',
-            selector: row => row.year,
+            name: 'Price',
+            selector: row => row.price,
             sortable: true
         },
         {
-            name: 'Edit',
-            selector: row => row.edit,
-            cell: () => <button onClick={this.handleButtonClick}>Edit</button>,
+            name: 'Language',
+            selector: row => row.language,
+            sortable: true
+        },
+        {
+            name: 'CreatorId',
+            selector: row => row.creatorId,
+            sortable: true
+        },
+        {
+            name: 'Options',
+            cell: () => <button onClick={this.handleButtonClick}>Show</button>,
             ignoreRowClick: true,
             allowOverflow: true,
             button: true,
         }
     ];
     
-    datatableinfo = [
-        {
-            id: 1,
-            title: 'Beetlejuice',
-            year: '1988',
-            edit: '<button></button>'
-        },
-        {
-            id: 2,
-            title: 'Ghostbusters',
-            year: '1984',
-        },
-    ]
     //---------- END OF REMOVE ---------------------------------------------------
 
     paginationComponentOptions = {
@@ -60,8 +61,8 @@ class DataTableAdmin extends React.Component{
         return(
             <DataTable 
                 title={this.props.title}
-                columns={this.columns} //TODO REPLACE WITH {this.props.columns} 
-                data={this.datatableinfo} //TODO REPLACE WITH {this.props.data}
+                columns={this.columns}
+                data={this.props.data}
                 fixedHeader={true}
                 fixedHeaderScrollHeight="80vh"
                 pagination 
@@ -78,4 +79,4 @@ class DataTableAdmin extends React.Component{
     }
 }
 
-export default DataTableAdmin;
+export default CourseTable;
