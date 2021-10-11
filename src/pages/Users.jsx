@@ -20,15 +20,14 @@ class Users extends React.Component {
 
         try {
             const response = await axios.get(USERS_ENDPOINT_URL);
-            this.setState({ 
-                userList: response.data.users,
-                loading: false
-            });
+            this.setState({ userList: response.data.users });
             console.log(this.state.userList);
         } catch (err) {
             console.log("Error al buscar usuarios");
             console.log(err);
         }
+
+        this.setState({ loading: false });
     }
 
     componentDidMount(prevProps) {

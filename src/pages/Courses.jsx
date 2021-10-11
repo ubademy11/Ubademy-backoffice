@@ -22,16 +22,15 @@ class Courses extends React.Component {
         try {
             const response = await axios.get(COURSES_ENDPOINT_URL);
             console.log(response);
-            this.setState({ 
-                courseList : response.data.courses,
-                loading: false
-            });
+            this.setState({ courseList: response.data.courses });
             
             console.log(this.state.courseList);
         } catch (err) {
             console.log("Error al buscar los cursos");
             console.log(err);
         }
+        
+        this.setState({ loading: false });
     }
 
     componentDidMount(prevProps) {
