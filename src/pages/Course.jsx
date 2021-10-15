@@ -6,22 +6,18 @@ class Course extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            courseInfo: []   
+            courseInfo: [],
+            courseUrl: "http://localhost:3002/course/byParams?title="   
         };
-    }
-    
-    goToSignIn = event => {
-        event.preventDefault();
-        window.location.href = "./dummyCourse";
     }
 
     fetchCourses = async () => {
-		try{
-            const { data } = await axios.get(COURSES_ENDPOINT_URL);
+		try {
+            const { data } = await axios.get(this.state.courseUrl);
             this.setState({ courseInfo: data });
             console.log("en el setState");
             console.log(this.state.courseInfo);
-        }catch(error) {
+        } catch(error) {
             console.log("Error al buscar los cursos");
             console.log(error);
         }
@@ -34,14 +30,8 @@ class Course extends React.Component{
     render () {
         console.log('th', this.state)
         return(
-            <div className="coursePage">
-                <header>
-                    <href className="header-logo-info">
-                        <img className="header-logo" src={"https://i.ibb.co/GChKvms/Whats-App-Image-2021-10-01-at-16-32-08.jpg"}></img>
-                    </href>
-                </header>          
-
-                <div className="courseTopic">hooo</div>
+            <div className="coursePage">    
+                <div className="courseTopic">{this.state.courseInfo.title}</div>
                 <div className="courseInfo">
                     <div><img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img></div>
                     <div className="courseTitle">haha</div>

@@ -9,7 +9,6 @@ cambiar todo a porcentaje.
 
 .coursePage {
     background-color: #F3F3EB;
-    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
+import { ReactDOM } from 'react-dom';
+import Course from '../../pages/Course.jsx';
 
 class CourseTable extends React.Component{
 
@@ -9,7 +11,8 @@ class CourseTable extends React.Component{
 
     handleButtonClick = (event) => {
         event.preventDefault();
-        window.location.href = "./dummyCourse"; // TODO GO TO PARTICULAR COURSE VIEW
+        window.location.href = "./course"; // TODO GO TO PARTICULAR COURSE VIEW
+        ReactDOM.render(<Course/>);
     };
 
     //----------- TODO REMOVE AND CONNECT WITH API INFO ---------
