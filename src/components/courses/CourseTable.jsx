@@ -9,7 +9,7 @@ class CourseTable extends React.Component{
 
     handleButtonClick = (event) => {
         event.preventDefault();
-        window.location.href = "./ingenieria"; // TODO GO TO PARTICULAR COURSE VIEW
+        window.location.href = "./dummyCourse"; // TODO GO TO PARTICULAR COURSE VIEW
     };
 
     //----------- TODO REMOVE AND CONNECT WITH API INFO ---------
