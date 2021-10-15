@@ -6,7 +6,7 @@ class Course extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            course_info: []   
+            courseInfo: []   
         };
     }
     
@@ -17,10 +17,10 @@ class Course extends React.Component{
 
     fetchCourses = async () => {
 		try{
-            const response = await axios.get(COURSES_ENDPOINT_URL);
-            this.setState({course_info: response.data.courses});
+            const { data } = await axios.get(COURSES_ENDPOINT_URL);
+            this.setState({ courseInfo: data });
             console.log("en el setState");
-            console.log(this.course_info);
+            console.log(this.state.courseInfo);
         }catch(error) {
             console.log("Error al buscar los cursos");
             console.log(error);
@@ -29,11 +29,10 @@ class Course extends React.Component{
 
     componentDidMount () {
         this.fetchCourses();
-        console.log("en el didMount");
-        console.log(this.course_info);
     }
 
     render () {
+        console.log('th', this.state)
         return(
             <div className="coursePage">
                 <header>
