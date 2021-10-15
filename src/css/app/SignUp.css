@@ -1,0 +1,116 @@
+.SignupPage {
+    background-color: #F3F3EB;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+}
+
+.SignupForm {
+    display: block;
+    position: relative;
+    background-color: white;
+    width: 360px;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.SignupForm .FormLogo {
+    margin: 10px auto;
+    text-align: center;
+    display: block;
+}
+.SignupForm .FormInfo {
+    border-bottom: solid 1px #d1d7dc;
+    color: #1c1d1f;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 16px;
+}
+
+.SignupForm .FormGroup {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.inputUser {
+    padding: 5px;
+}
+
+.SignupForm .FormGroup input {
+    display: block;
+    width: 100%;
+    /*border: none;*/
+}
+
+.SignupForm .FormSubmit {
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    height: 45px;
+    background-color: #a435f0;
+    color: white;
+    font-size: 20px;
+}
+
+.SignupForm .FormSubmit:hover {
+    background-color: #5624d0;
+}
+
+.goToSignIn {
+    cursor: pointer;
+    font-weight: bold;
+    color: #5624d0;
+}
+
+.termsAndPrivacy {
+    font-size: 11px;
+    color: #1c1d1f;
+    width: 80%;
+    margin: 1%;
+}
+
+.privacyPolicy {
+    cursor: pointer;
+    color: #5624d0;
+}
+
+.backToSignin {
+    margin-bottom: 2%;
+}
+
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	margin-bottom:5%;
+    background: #fff;
+    height: 10%;
+    position: fixed;
+    top: 0;
+    display: flow-root;
+}
+
+.header-logo {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: 70%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}
+
+.headerSignin {
+    margin-left: 60%;
+    height: 60%;
+    width: 8%;
+    font-size: 80%;
+    margin-top: 1%;
+}
+
+.lock-logo-black {
+    width: 5%;
+}

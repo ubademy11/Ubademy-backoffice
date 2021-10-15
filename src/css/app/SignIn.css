@@ -1,0 +1,115 @@
+.SignInPage {
+    background-color: #F3F3EB;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignInForm {
+    display: block;
+    position: relative;
+    background-color: white;
+    width: 360px;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.SignInForm .FormLogo {
+    margin: 10px auto;
+    text-align: center;
+    display: block;
+}
+.SignInForm .FormInfo {
+    border-bottom: solid 1px #d1d7dc;
+    color: #1c1d1f;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 16px;
+}
+
+.SignInForm .FormGroup {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.inputUser {
+    padding: 5px;
+}
+
+.SignInForm .FormGroup input {
+    display: block;
+    width: 100%;
+    /*border: none;*/
+}
+
+.SignInForm .FormSubmit {
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    height: 45px;
+    background-color: #a435f0;
+    color: white;
+    font-size: 20px;
+}
+
+.SignInForm .FormSubmit:hover {
+    background-color: #5624d0;
+}
+
+.goToForgotPassword {
+    cursor: pointer;
+    font-weight: bold;
+    color: #5624d0;
+    margin-left: 30px;
+}
+
+.goToAnotherAccount {
+    cursor: pointer;
+    font-weight: bold;
+    color: #5624d0;
+}
+
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	margin-bottom:20px;
+    background: #fff;
+    height: 10%;
+    position: fixed;
+    top: 0;
+}
+
+.header-logo {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: 70%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}
+
+.headerLogin {
+    margin-left: 60%;
+    height: 60%;
+    width: 8%;
+    font-size: 80%;
+    background-color: #1c1d1f;
+    color: #d1d7dc;
+    margin-top: 1%;
+}
+
+.lock-logo {
+    height: 50%;
+}
+
+.SignInErrorMessage {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    color: red;
+}

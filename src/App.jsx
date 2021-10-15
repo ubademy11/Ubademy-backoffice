@@ -1,50 +1,44 @@
-import React, {useImperativeHandle, useState} from "react";
-import User from "./components/User.jsx";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./css/app/App.css";
+import "./css/app/Sidebar.css";
+import "./css/app/Navbar.css";
+import "./css/app/SignUp.css";
+import "./css/app/SignIn.css";
+import "./css/courses/Courses.css";
+import "./css/users/Users.css";
+import Sidebar from "./components/Sidebar.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Users from "./pages/Users.jsx";
+import Courses from "./pages/Courses.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import SignIn from "./pages/SignIn.jsx";
 
 class App extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            users: [
-                {id: 1, firstName: "Pedro", lastName: "Lopez", email: "pedro.cabj@test.com", role: "User"},
-                {id: 2, firstName: "Victoria", lastName: "Gonzalez", email: "vic2000@test.com", role: "User"},
-                {id: 3, firstName: "Juan", lastName: "Gutierrez", email: "juan@test.com", role: "Admin"},
-                {id: 4, firstName: "Lucas", lastName: "Garcia", email: "lucasgarcia@test.com", role: "User"},
-                {id: 5, firstName: "Sofia", lastName: "Fernandez", email: "sofer@test.com", role: "Admin"},
-            ]
-        };
-    }
-
-
-    deleteUser = function(userId) {
-        let users = [...this.state.users];
-        users = users.filter((user) => {
-            return user.id !== userId
-        });
-        this.setState({users : users});
-        
     }
 
     render() {
         return (
-            <div className = "container">
-                <h3 className = "p-3 text-center"> Lista de usuarios </h3>
-                <table className="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Rol</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.users.map((user) => {
-                            return <User userData={user} onClick={this.deleteUser.bind(this)}/>
-                        })}
-                    </tbody>
-                </table>
-            </div>
+            <Router>
+                <Switch>
+                    <Route path="/" exact component={SignIn} />
+                    <Route path="/signup" exact component={SignUp} />
+                    <div className = "App">
+                        <Navbar/>
+                            <div className="MainContainer">
+                                <Sidebar className='Sidebar closed'/>
+                                <div className="Content">
+                                    <Route path='/users' exact component={Users} />
+                                    <Route path='/courses' exact component={Courses} />
+                                </div>
+                            </div>
+                        
+                    </div>
+                </Switch>
+            </Router>
         );
     }
 }

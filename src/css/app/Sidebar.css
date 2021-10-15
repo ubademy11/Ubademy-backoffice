@@ -1,0 +1,67 @@
+.Sidebar {
+    width: 14rem;
+    background-color: #dee2e6;;
+}
+
+.Sidebar.closed {
+    width: 3rem;
+    transition: all 0.1s ease 0s;
+}
+.SidebarList {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.SidebarList .SidebarItem {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 50px;
+}
+
+.SidebarItem .ItemLink {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.SidebarList .SidebarItem:hover {
+    cursor: pointer;
+    background-color: #494a4b; 
+}
+
+.SidebarItem .ItemIcon {
+    flex: 20%;
+    display: grid;
+    place-items: center;
+    
+}
+
+.Sidebar.closed .SidebarList .ItemLink {
+    padding: 0;
+    margin: 0 auto;
+}
+.Sidebar.closed .SidebarList .SidebarItem {
+    padding: 0;
+}
+.Sidebar.closed .SidebarItem .ItemTitle {
+    display: none;
+}
+.Sidebar.closed .SidebarItem .ItemIcon {
+    flex:100%
+}
+
+.SidebarItem .ItemTitle {
+    flex: 70%;
+    padding-left:10px;
+}
