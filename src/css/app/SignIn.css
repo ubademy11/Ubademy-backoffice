@@ -1,4 +1,4 @@
-.LoginPage {
+.SignInPage {
     background-color: #F3F3EB;
     width: 100vw;
     height: 100vh;
@@ -6,10 +6,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y:auto;
 }
 
-.LoginForm {
+.SignInForm {
     display: block;
     position: relative;
     background-color: white;
@@ -19,12 +18,12 @@
     border-radius: 5px;
 }
 
-.LoginForm .FormLogo {
+.SignInForm .FormLogo {
     margin: 10px auto;
     text-align: center;
     display: block;
 }
-.LoginForm .FormInfo {
+.SignInForm .FormInfo {
     border-bottom: solid 1px #d1d7dc;
     color: #1c1d1f;
     display: block;
@@ -33,7 +32,7 @@
     padding-bottom: 16px;
 }
 
-.LoginForm .FormGroup {
+.SignInForm .FormGroup {
     display: block;
     margin-bottom: 15px;
 }
@@ -42,13 +41,13 @@
     padding: 5px;
 }
 
-.LoginForm .FormGroup input {
+.SignInForm .FormGroup input {
     display: block;
     width: 100%;
     /*border: none;*/
 }
 
-.LoginForm .FormSubmit {
+.SignInForm .FormSubmit {
     border: none;
     margin-top: 20px;
     width: 100%;
@@ -58,40 +57,30 @@
     font-size: 20px;
 }
 
-.LoginForm .FormSubmit:hover {
+.SignInForm .FormSubmit:hover {
     background-color: #5624d0;
 }
 
-.goToSignIn {
+.goToForgotPassword {
+    cursor: pointer;
+    font-weight: bold;
+    color: #5624d0;
+    margin-left: 30px;
+}
+
+.goToAnotherAccount {
     cursor: pointer;
     font-weight: bold;
     color: #5624d0;
 }
 
-.termsAndPrivacy {
-    font-size: 11px;
-    color: #1c1d1f;
-    width: 80%;
-    margin: 1%;
-}
-
-.privacyPolicy {
-    cursor: pointer;
-    color: #5624d0;
-}
-
-.backToSignin {
-    margin-bottom: 2%;
-}
-
 header {
 	width:100%; /* Establecemos que el header abarque el 100% del documento */
-	margin-bottom:5%;
+	margin-bottom:20px;
     background: #fff;
     height: 10%;
     position: fixed;
     top: 0;
-    display: flow-root;
 }
 
 .header-logo {
@@ -103,14 +92,24 @@ header {
     margin-top: 0.5%;
 }
 
-.headerSignin {
+.headerLogin {
     margin-left: 60%;
     height: 60%;
     width: 8%;
     font-size: 80%;
+    background-color: #1c1d1f;
+    color: #d1d7dc;
     margin-top: 1%;
 }
 
-.lock-logo-black {
-    width: 5%;
+.lock-logo {
+    height: 50%;
+}
+
+.SignInErrorMessage {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    color: red;
 }

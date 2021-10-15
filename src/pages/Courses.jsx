@@ -1,15 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
-import UserTable from '../components/users/UserTable.jsx';
+import CourseTable from '../components/courses/CourseTable.jsx';
 
-const USERS_ENDPOINT_URL = "http://localhost:3002/user"; //TODO CONECTAR API 
+const COURSES_ENDPOINT_URL = "http://localhost:3002/course";
 
-class Users extends React.Component {
+class Courses extends React.Component {
     constructor(props){
         super(props);
+
         this.state = {
-            userList: [],
+            courseList: [],
             loading: true,
         };
     }
@@ -19,20 +20,27 @@ class Users extends React.Component {
 		//setLoading(true);
 
         try {
-            const response = await axios.get(USERS_ENDPOINT_URL);
-            this.setState({ userList: response.data.users });
-            console.log(this.state.userList);
+            const response = await axios.get(COURSES_ENDPOINT_URL);
+            console.log(response);
+            this.setState({ courseList: response.data.courses });
+            
+            console.log(this.state.courseList);
         } catch (err) {
-            console.log("Error al buscar usuarios");
+            console.log("Error al buscar los cursos");
             console.log(err);
         }
-
+        
         this.setState({ loading: false });
     }
 
     componentDidMount(prevProps) {
         this.fetchUsers();
     }
+
+    /*componentDidUpdate(prevProps) {
+        if(this.state.loading && this.state.courseList.length > 0)
+            this.setState({loading: false});
+    }*/
 
     //ADD AND SEND TO DATA TABLE ADMIN BY PROPS
     /*
@@ -56,23 +64,17 @@ class Users extends React.Component {
 	}, []);
      */
 
-    paginationComponentOptions = {
-        rowsPerPageText: 'Filas por página',
-        rangeSeparatorText: 'de',
-        selectAllRowsItem: true,
-        selectAllRowsItemText: 'Todos',
-    };
-
     render() { 
         let vista;
         if(this.state.loading)
             vista = <CircularProgress />; //TODO: cambiar ubicacion
         else 
-            vista = <UserTable 
-                        className="data-table-users"
-                        title="Users"
-                        data={this.state.userList}
-                    ></UserTable>;
+            vista = <CourseTable 
+                        className="data-table-courses"
+                        title="Courses"
+                        columns={this.columns}
+                        data={this.state.courseList}
+                    ></CourseTable>;
         return (
             <div className='Users'>
                 {vista}
@@ -80,4 +82,4 @@ class Users extends React.Component {
     )}
 }
 
-export default Users;
+export default Courses;

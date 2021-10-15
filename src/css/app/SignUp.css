@@ -1,4 +1,4 @@
-.SignInPage {
+.SignupPage {
     background-color: #F3F3EB;
     width: 100vw;
     height: 100vh;
@@ -6,9 +6,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y:auto;
 }
 
-.SignInForm {
+.SignupForm {
     display: block;
     position: relative;
     background-color: white;
@@ -18,12 +19,12 @@
     border-radius: 5px;
 }
 
-.SignInForm .FormLogo {
+.SignupForm .FormLogo {
     margin: 10px auto;
     text-align: center;
     display: block;
 }
-.SignInForm .FormInfo {
+.SignupForm .FormInfo {
     border-bottom: solid 1px #d1d7dc;
     color: #1c1d1f;
     display: block;
@@ -32,7 +33,7 @@
     padding-bottom: 16px;
 }
 
-.SignInForm .FormGroup {
+.SignupForm .FormGroup {
     display: block;
     margin-bottom: 15px;
 }
@@ -41,13 +42,13 @@
     padding: 5px;
 }
 
-.SignInForm .FormGroup input {
+.SignupForm .FormGroup input {
     display: block;
     width: 100%;
     /*border: none;*/
 }
 
-.SignInForm .FormSubmit {
+.SignupForm .FormSubmit {
     border: none;
     margin-top: 20px;
     width: 100%;
@@ -57,30 +58,40 @@
     font-size: 20px;
 }
 
-.SignInForm .FormSubmit:hover {
+.SignupForm .FormSubmit:hover {
     background-color: #5624d0;
 }
 
-.goToForgotPassword {
+.goToSignIn {
     cursor: pointer;
     font-weight: bold;
     color: #5624d0;
-    margin-left: 30px;
 }
 
-.goToAnotherAccount {
+.termsAndPrivacy {
+    font-size: 11px;
+    color: #1c1d1f;
+    width: 80%;
+    margin: 1%;
+}
+
+.privacyPolicy {
     cursor: pointer;
-    font-weight: bold;
     color: #5624d0;
+}
+
+.backToSignin {
+    margin-bottom: 2%;
 }
 
 header {
 	width:100%; /* Establecemos que el header abarque el 100% del documento */
-	margin-bottom:20px;
+	margin-bottom:5%;
     background: #fff;
     height: 10%;
     position: fixed;
     top: 0;
+    display: flow-root;
 }
 
 .header-logo {
@@ -92,16 +103,14 @@ header {
     margin-top: 0.5%;
 }
 
-.headerLogin {
+.headerSignin {
     margin-left: 60%;
     height: 60%;
     width: 8%;
     font-size: 80%;
-    background-color: #1c1d1f;
-    color: #d1d7dc;
     margin-top: 1%;
 }
 
-.lock-logo {
-    height: 50%;
+.lock-logo-black {
+    width: 5%;
 }
