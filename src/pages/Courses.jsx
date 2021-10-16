@@ -16,8 +16,6 @@ class Courses extends React.Component {
     }
 
     fetchUsers = async () => {
-        
-		//setLoading(true);
 
         try {
             const response = await axios.get(COURSES_ENDPOINT_URL);
@@ -36,33 +34,6 @@ class Courses extends React.Component {
     componentDidMount(prevProps) {
         this.fetchUsers();
     }
-
-    /*componentDidUpdate(prevProps) {
-        if(this.state.loading && this.state.courseList.length > 0)
-            this.setState({loading: false});
-    }*/
-
-    //ADD AND SEND TO DATA TABLE ADMIN BY PROPS
-    /*
-    const handlePageChange = page => {
-		fetchUsers(page);
-	};
-
-	const handlePerRowsChange = async (newPerPage, page) => {
-		setLoading(true);
-
-		const response = await axios.get(`https://reqres.in/api/users?page=${page}&per_page=${newPerPage}&delay=1`);
-
-		setData(response.data.data);
-		setPerPage(newPerPage);
-		setLoading(false);
-	};
-
-	useEffect(() => {
-		fetchUsers(1); // fetch page 1 of users
-		
-	}, []);
-     */
 
     render() { 
         let vista;
