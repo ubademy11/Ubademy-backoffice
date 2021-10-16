@@ -16,6 +16,7 @@ import Courses from "./pages/Courses.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import SignIn from "./pages/SignIn.jsx";
 import Course from "./pages/Course.jsx";
+import User from "./pages/User.jsx";
 
 class App extends React.Component{
     constructor(props){
@@ -36,6 +37,7 @@ class App extends React.Component{
                                     <Route path='/users' exact component={Users} />
                                     <Route path='/courses' exact component={Courses} />
                                     <Route path='/course' exact component={Course} />
+                                    <Route path='/user' exact component={User} />
                                 </div>
                             </div>
                         

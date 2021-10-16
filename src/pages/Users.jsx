@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import UserTable from '../components/users/UserTable.jsx';
 
-const USERS_ENDPOINT_URL = "http://localhost:3002/user"; //TODO CONECTAR API 
+const USERS_ENDPOINT_URL = "http://localhost:3002/user";
 
 class Users extends React.Component {
     constructor(props){
@@ -15,8 +15,6 @@ class Users extends React.Component {
     }
 
     fetchUsers = async () => {
-        
-		//setLoading(true);
 
         try {
             const response = await axios.get(USERS_ENDPOINT_URL);
@@ -33,28 +31,6 @@ class Users extends React.Component {
     componentDidMount(prevProps) {
         this.fetchUsers();
     }
-
-    //ADD AND SEND TO DATA TABLE ADMIN BY PROPS
-    /*
-    const handlePageChange = page => {
-		fetchUsers(page);
-	};
-
-	const handlePerRowsChange = async (newPerPage, page) => {
-		setLoading(true);
-
-		const response = await axios.get(`https://reqres.in/api/users?page=${page}&per_page=${newPerPage}&delay=1`);
-
-		setData(response.data.data);
-		setPerPage(newPerPage);
-		setLoading(false);
-	};
-
-	useEffect(() => {
-		fetchUsers(1); // fetch page 1 of users
-		
-	}, []);
-     */
 
     paginationComponentOptions = {
         rowsPerPageText: 'Filas por página',

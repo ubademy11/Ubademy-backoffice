@@ -1,0 +1,15 @@
+.userLogo {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: 30%;
+}
+
+.userInfo {
+    margin: 3%;
+}
+
+.userData {
+    font-size: x-large;
+}
+
