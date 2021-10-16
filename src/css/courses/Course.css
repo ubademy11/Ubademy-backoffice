@@ -24,12 +24,11 @@ cambiar todo a porcentaje.
 /*me molesta el tema de la posicion, seguramente desde otra pc se vea mal*/
 .coursePage .courseTopic {
     border-bottom: solid 1px #d1d7dc;
-    padding-bottom: 10px;
+    margin-left: 3%;
     color: #a435f0;
-    font-weight: 700;
-    font-size: 14px;
-    margin-top: 4%;
-    margin-left: -85%;
+    font-size: xx-large;
+    margin-left: -80%;
+    font-style: italic;
 }
 
 .coursePage .courseInfo .courseLogo {
@@ -41,8 +40,7 @@ cambiar todo a porcentaje.
 
 .coursePage .courseInfo .courseTitle{
     color: #1c1d1f;
-    font-weight: 700;
-    font-size: 38px;
+    font-size: xxx-large;
     position: absolute;
     margin-top: -21%;
     margin-left: 12%;
@@ -52,13 +50,10 @@ cambiar todo a porcentaje.
 .coursePage .courseInfo .courseTitleSecondary{
     color: #1c1d1f;
     font-weight: 400;
-    font-size: 18px;
-    padding-bottom: 1px;
     position: absolute;
     margin-top: -14%;
     margin-left: 12%;
     border-bottom: solid 1px #d1d7dc;
-    padding-bottom: 10px;
 }
 
 .coursePage .courseInfo .courseVideoLogo {
@@ -97,7 +92,7 @@ cambiar todo a porcentaje.
 .adminInfo .adminPhoto{
     display: block;
     margin-top: 22%;
-    margin-left: -610%;
+    margin-left: -700%;
 }
 
 .adminInfo .adminName {

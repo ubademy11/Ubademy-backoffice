@@ -29,14 +29,14 @@ class Course extends React.Component {
         console.log(window.location.search);
         return(
             <div className="coursePage">    
-                <div className="courseTopic">{this.state.courseInfo.subtitle}</div>
+                <div className="courseTopic">{this.state.courseInfo.title}</div>
                 <div className="courseInfo">
                     <div><img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img></div>
                     <div className="courseTitle">{this.state.courseInfo.title}</div>
                     <div className="courseTitleSecondary">{this.state.courseInfo.subtitle}</div>
-                    <div className="courseDetails">{this.state.courseInfo.description}</div><br/>
-                    <div className="courseDetails">{this.state.courseInfo.creatorId}</div><br/>
-                    <div className="courseDetails">{this.state.courseInfo.language}</div>                
+                    <div className="courseDetails">Descripción: {this.state.courseInfo.description}</div><br/>
+                    <div className="courseDetails">ID creador: {this.state.courseInfo.creatorId}</div><br/>
+                    <div className="courseDetails">Lenguaje: {this.state.courseInfo.language}</div>                
                 </div>
 
                 <div className="adminInfo">
