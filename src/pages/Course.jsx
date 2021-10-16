@@ -29,16 +29,14 @@ class Course extends React.Component {
         console.log(window.location.search);
         return(
             <div className="coursePage">    
-                <div className="courseTopic">{this.state.courseInfo.title}</div>
+                <div className="courseTopic">{this.state.courseInfo.subtitle}</div>
                 <div className="courseInfo">
                     <div><img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img></div>
-                    <div className="courseTitle">haha</div>
-                    <div className="courseTitleSecondary">En este curso aprenderás desde las bases hasta POO en Python.<br/> 
-                    Empieza a Aprender ya Mismo de forma Gratuita.</div>
-                    {/*<div><img className="courseLogo" src={"https://i.ibb.co/mvvm1Ry/logo-television.png"}></img></div>*/}
-                    <div className="courseDetails">5h 20min de video bajo demanda.</div><br/>
-                    <div className="courseDetails">Creado por Alvaro Chirou • 380.000+ Students Worldwide, Academia AC, Universidad Hacking, Walter Coto.</div><br/>
-                    <div className="courseDetails">Español.</div>                
+                    <div className="courseTitle">{this.state.courseInfo.title}</div>
+                    <div className="courseTitleSecondary">{this.state.courseInfo.subtitle}</div>
+                    <div className="courseDetails">{this.state.courseInfo.description}</div><br/>
+                    <div className="courseDetails">{this.state.courseInfo.creatorId}</div><br/>
+                    <div className="courseDetails">{this.state.courseInfo.language}</div>                
                 </div>
 
                 <div className="adminInfo">
