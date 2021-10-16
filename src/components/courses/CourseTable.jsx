@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
-import { ReactDOM } from 'react-dom';
-import Course from '../../pages/Course.jsx';
 
 class CourseTable extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            titleSelected: ""
+        }
     }
 
     handleButtonClick = (event) => {
         event.preventDefault();
-        window.location.href = "./course"; // TODO GO TO PARTICULAR COURSE VIEW
-        ReactDOM.render(<Course/>);
+        var title = (event.target.id.split(" ")).join("%");
+        window.location.href = "./course?title=" + title;
     };
 
-    //----------- TODO REMOVE AND CONNECT WITH API INFO ---------
     columns = [
         {
             name: 'Id',
@@ -44,14 +44,12 @@ class CourseTable extends React.Component{
         },
         {
             name: 'Options',
-            cell: () => <button onClick={this.handleButtonClick}>Show</button>,
+            cell: (row) => <button onClick={this.handleButtonClick} id={row.title}>Show</button>,
             ignoreRowClick: true,
             allowOverflow: true,
             button: true,
         }
     ];
-    
-    //---------- END OF REMOVE ---------------------------------------------------
 
     paginationComponentOptions = {
         rowsPerPageText: 'Filas por página',

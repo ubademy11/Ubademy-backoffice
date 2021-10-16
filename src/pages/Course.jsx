@@ -1,24 +1,21 @@
 import React from 'react';
 import axios from 'axios';
-const COURSES_ENDPOINT_URL = "http://localhost:3002/course/byParams?title=curso%de%excel%1";
 
-class Course extends React.Component{
+class Course extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            courseInfo: [],
-            courseUrl: "http://localhost:3002/course/byParams?title="   
+            courseInfo: []
         };
+        this.endpoint = "http://localhost:3002/course/byParams" + window.location.search;
     }
 
     fetchCourses = async () => {
 		try {
-            const { data } = await axios.get(this.state.courseUrl);
+            const { data } = await axios.get(this.endpoint);
             this.setState({ courseInfo: data });
-            console.log("en el setState");
-            console.log(this.state.courseInfo);
         } catch(error) {
-            console.log("Error al buscar los cursos");
+            console.log("Error al buscar el curso solicitado");
             console.log(error);
         }
 	};
@@ -28,7 +25,8 @@ class Course extends React.Component{
     }
 
     render () {
-        console.log('th', this.state)
+        console.log('th', this.state);
+        console.log(window.location.search);
         return(
             <div className="coursePage">    
                 <div className="courseTopic">{this.state.courseInfo.title}</div>
@@ -51,8 +49,6 @@ class Course extends React.Component{
                     <div className="adminDetails">Calificacion del instructor: 4,5</div><br/>
                     <div className="adminDetails">51 cursos</div>
                 </div>
-
-                {/*<Link to="/Users">Login</Link>*/}
             </div>
         );
     }
