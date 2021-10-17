@@ -2,11 +2,9 @@
 Me baso en esta pagina:
 https://www.udemy.com/course/aprende-el-lenguaje-de-programacion-python3-practicando/
 */
-
 /*
 cambiar todo a porcentaje.
 */
-
 .coursePage {
     background-color: #F3F3EB;
     height: 100vh;
@@ -16,11 +14,9 @@ cambiar todo a porcentaje.
     align-items: center;
     overflow-y:auto;
 }
-
 .courseInfo {
     display: block;
 }
-
 /*me molesta el tema de la posicion, seguramente desde otra pc se vea mal*/
 .coursePage .courseTopic {
     border-bottom: solid 1px #d1d7dc;
@@ -64,11 +60,9 @@ cambiar todo a porcentaje.
     margin-top: -8%;
     margin-left: 14%;
 }
-
 .adminInfo {
     display: block;
 }
-
 .adminInfo .adminTitle{
     border-bottom: solid 1px #d1d7dc;
     padding-bottom: 10px;
@@ -97,7 +91,6 @@ cambiar todo a porcentaje.
     /*esto podria ser un link al profesor*/
     text-decoration: underline;
 }
-
 .adminInfo .adminGrades{
     color: #1c1d1f;
     font-weight: 300;
@@ -127,7 +120,6 @@ header {
     top: 0;
     display: flow-root;
 }
-
 .header-logo {
     border: 0;
     vertical-align: middle;
