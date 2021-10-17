@@ -9,10 +9,10 @@ class UserTable extends React.Component{
 
     handleButtonClick = (event) => {
         event.preventDefault();
-        window.location.href = "./ingenieria"; // TODO GO TO PARTICULAR COURSE VIEW
+        var id = (event.target.id.split(" ")).join("%");
+        window.location.href = "./user?id=" + id;
     };
 
-    //----------- TODO REMOVE AND CONNECT WITH API INFO ---------
     columns = [
         {
             name: 'Id',
@@ -32,14 +32,12 @@ class UserTable extends React.Component{
         {
             name: 'Edit',
             selector: row => row.edit,
-            cell: () => <button onClick={this.handleButtonClick}>Edit</button>,
+            cell: (row) => <button onClick={this.handleButtonClick} id={row.id}>Edit</button>,
             ignoreRowClick: true,
             allowOverflow: true,
             button: true,
         }
     ];
-    
-    //---------- END OF REMOVE ---------------------------------------------------
 
     paginationComponentOptions = {
         rowsPerPageText: 'Filas por página',

@@ -5,9 +5,6 @@ class CourseTable extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            titleSelected: ""
-        }
     }
 
     handleButtonClick = (event) => {

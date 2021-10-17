@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const LOGIN_ENDPOINT_URL = "http://localhost:3002/user/login";
+const LOGIN_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user/login";
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'; // for all requests
 axios.defaults.headers.common['Content-Type'] = 'application/json'; // for all requests
