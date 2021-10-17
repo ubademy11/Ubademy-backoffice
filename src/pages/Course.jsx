@@ -7,7 +7,7 @@ class Course extends React.Component {
         this.state = {
             courseInfo: []
         };
-        this.endpoint = "http://localhost:3002/course/byParams" + window.location.search;
+        this.endpoint = "https://ubademy-course-service.herokuapp.com/course/byParams" + window.location.search;
     }
 
     fetchCourses = async () => {

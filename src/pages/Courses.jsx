@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import CourseTable from '../components/courses/CourseTable.jsx';
 
-const COURSES_ENDPOINT_URL = "http://localhost:3002/course";
+const COURSES_ENDPOINT_URL = "https://ubademy-course-service.herokuapp.com/course";
 
 class Courses extends React.Component {
     constructor(props){
