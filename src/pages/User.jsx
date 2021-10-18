@@ -8,7 +8,7 @@ class User extends React.Component {
         this.state = {
             userInfo: []
         };
-        this.endpoint = "http://localhost:3002/user/byParams" + window.location.search;
+        this.endpoint = "https://ubademy--user-service.herokuapp.com/user/byParams" + window.location.search;
     }
 
     fetchUsers = async () => {

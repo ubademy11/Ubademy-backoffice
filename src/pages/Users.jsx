@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import UserTable from '../components/users/UserTable.jsx';
 
-const USERS_ENDPOINT_URL = "http://localhost:3002/user";
+const USERS_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user";
 
 class Users extends React.Component {
     constructor(props){
