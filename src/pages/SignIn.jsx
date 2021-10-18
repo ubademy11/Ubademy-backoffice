@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { CircularProgress } from '@material-ui/core';
 
 const LOGIN_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user/login";
 
@@ -13,32 +14,31 @@ class SignIn extends React.Component {
         this.state = {
             email: "",
             password: "",
-            errMsg: "",
+            message: "",
         }
     }
 
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value,
-            errMsg: "",
+            message: "",
         });
     }
 
     handleSubmit = async event => {
         event.preventDefault();
         console.log(this.state);
-        
+        this.setState({ message: "Ingresando..." });
         try {
             let response = await axios.post(LOGIN_ENDPOINT_URL, this.state);
             console.log(response);
             window.location.href = "./users";
         } catch(err) {
             if(err.response && err.response.status == 401) {
-                this.setState({errMsg: "Usuario o contraseña incorrectos"});
+                this.setState({message: "Usuario o contraseña incorrectos"});
             }
             
         }
-
 
         //window.location.href = "./users";
     };
@@ -89,7 +89,7 @@ class SignIn extends React.Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    {<p className="SignInErrorMessage">{this.state.errMsg}</p>}
+                    {<p className="SignInErrorMessage">{this.state.message}</p>}
                     <input className="FormSubmit" type="submit" value="Iniciar sesión"/>
                 </form>
     
@@ -98,10 +98,7 @@ class SignIn extends React.Component {
                     <text className="goToForgotPassword">¿Has olvidado tu contraseña?</text>
                     <br></br>
                     <text className="goToAnotherAccount">Iniciar sesión en una cuenta diferente</text>
-                </div>
-    
-                {/*<Link to="/Users">SignIn</Link>*/}
-            
+                </div>            
             </div>
             
         );
