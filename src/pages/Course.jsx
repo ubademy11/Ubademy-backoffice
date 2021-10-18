@@ -30,23 +30,20 @@ class Course extends React.Component {
         return(
             <div className="coursePage">    
                 <div className="courseTopic">{this.state.courseInfo.title}</div>
-                <div className="courseInfo">
-                    <div><img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img></div>
-                    <div className="courseTitle">{this.state.courseInfo.title}</div>
-                    <div className="courseTitleSecondary">{this.state.courseInfo.subtitle}</div>
-                    <div className="courseDetails">Descripción: {this.state.courseInfo.description}</div><br/>
-                    <div className="courseDetails">ID creador: {this.state.courseInfo.creatorId}</div><br/>
-                    <div className="courseDetails">Lenguaje: {this.state.courseInfo.language}</div>                
-                </div>
-
-                <div className="adminInfo">
-                    <div className="adminTitle">Instructor</div>
-                    <div><img className="adminPhoto" src={"https://i.ibb.co/Pjjh5TY/admin-dummy100100.png"}></img></div>
-                    <div className="adminName">Alvaro Chirou • 380.000+ Students Worldwide</div>
-                    <div className="adminGrades">Digital Technology Teacher | Seguridad informática y Forense</div>
-                    <div className="adminDetails">Calificacion del instructor: 4,5</div><br/>
-                    <div className="adminDetails">51 cursos</div>
-                </div>
+                
+                <div><img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img></div>
+                <div className="courseTitle">{this.state.courseInfo.title}</div>
+                <div className="courseTitleSecondary">{this.state.courseInfo.subtitle}</div>
+                <div className="courseDescription">Descripción: {this.state.courseInfo.description}</div>
+                <div className="courseID">ID creador: {this.state.courseInfo.creatorId}</div>
+                <div className="courseLanguage"> Lenguaje: {this.state.courseInfo.language}</div>                
+                
+                <div className="adminTitle">Instructor</div>
+                <div><img className="adminPhoto" src={"https://i.ibb.co/Pjjh5TY/admin-dummy100100.png"}></img></div>
+                <div className="adminName">Alvaro Chirou • 380.000+ Students Worldwide</div>
+                <div className="adminGrades">Digital Technology Teacher | Seguridad informática y Forense</div>
+                <div className="adminRate">Calificacion del instructor: 4,5</div>
+                <div className="adminCourses">51 cursos</div>
             </div>
         );
     }
