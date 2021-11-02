@@ -37,19 +37,16 @@ class Course extends React.Component {
             curso = <div className="coursePage">    
                         <div className="courseTopic">{this.state.courseInfo.title}</div>
                         
-                        <div><img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img></div>
-                        <div className="courseTitle">{this.state.courseInfo.title}</div>
-                        <div className="courseTitleSecondary">{this.state.courseInfo.subtitle}</div>
-                        <div className="courseDescription">Descripción: {this.state.courseInfo.description}</div>
-                        <div className="courseID">ID creador: {this.state.courseInfo.creatorId}</div>
-                        <div className="courseLanguage"> Lenguaje: {this.state.courseInfo.language}</div>                
-                        
-                        <div className="adminTitle">Instructor</div>
-                        <div><img className="adminPhoto" src={"https://i.ibb.co/Pjjh5TY/admin-dummy100100.png"}></img></div>
-                        <div className="adminName">Alvaro Chirou • 380.000+ Students Worldwide</div>
-                        <div className="adminGrades">Digital Technology Teacher | Seguridad informática y Forense</div>
-                        <div className="adminRate">Calificacion del instructor: 4,5</div>
-                        <div className="adminCourses">51 cursos</div>
+                        <div className="courseInfo">
+                            <h2 className="courseTitle">{this.state.courseInfo.title}</h2>
+                            <h5 className="courseTitleSecondary">{this.state.courseInfo.subtitle}</h5>
+                            <img className="courseLogo" src={"https://i.ibb.co/tmGCPSy/python-para-principiantes.jpg"}></img>
+                            <div className="courseData">
+                                Descripción:<h5 className="data">{this.state.courseInfo.description}</h5>
+                                ID creador: <h5 className="data"> {this.state.courseInfo.creatorId}</h5>
+                                Lenguaje:<h5 className="data"> {this.state.courseInfo.language}</h5> 
+                            </div>
+                        </div>              
                     </div>;
         return ( <div>{curso}</div>);
     }
