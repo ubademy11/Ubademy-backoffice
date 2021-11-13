@@ -18,10 +18,10 @@ class Courses extends React.Component {
     fetchUsers = async () => {
 
         try {
-            const response = await axios.get(COURSES_ENDPOINT_URL);
+            const headers = { 'x-access-token': localStorage.getItem('token') };
+            const response = await axios.get(COURSES_ENDPOINT_URL, { headers });
             console.log(response);
             this.setState({ courseList: response.data.courses });
-            
             console.log(this.state.courseList);
         } catch (err) {
             console.log("Error al buscar los cursos");

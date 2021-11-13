@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const LOGIN_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user/login";
+const USER_DATA_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user/me";
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'; // for all requests
 axios.defaults.headers.common['Content-Type'] = 'application/json'; // for all requests
@@ -28,9 +29,11 @@ class SignIn extends React.Component {
         event.preventDefault();
         console.log(this.state);
         
+        this.setState({ message: "Ingresando..." });
         try {
             let response = await axios.post(LOGIN_ENDPOINT_URL, this.state);
             console.log(response);
+            localStorage.setItem('token', response.data.token);
             window.location.href = "./users";
         } catch(err) {
             if(err.response && err.response.status == 401) {
