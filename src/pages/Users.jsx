@@ -17,7 +17,8 @@ class Users extends React.Component {
     fetchUsers = async () => {
 
         try {
-            const response = await axios.get(USERS_ENDPOINT_URL);
+            const headers = { 'x-access-token': localStorage.getItem('token') };
+            const response = await axios.get(USERS_ENDPOINT_URL, { headers });
             this.setState({ userList: response.data.users });
             console.log(this.state.userList);
         } catch (err) {
