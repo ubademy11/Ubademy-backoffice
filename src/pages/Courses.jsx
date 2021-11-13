@@ -16,7 +16,6 @@ class Courses extends React.Component {
     }
 
     fetchUsers = async () => {
-
         try {
             const headers = { 'x-access-token': localStorage.getItem('token') };
             const response = await axios.get(COURSES_ENDPOINT_URL, { headers });
