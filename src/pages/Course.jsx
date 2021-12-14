@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
+import * as Constants from '../constants.js';
 
 class Course extends React.Component {
     constructor(props){
@@ -9,7 +10,7 @@ class Course extends React.Component {
             courseInfo: [],
             loading: true
         };
-        this.endpoint = "https://ubademy-course-service.herokuapp.com/course/byParams" + window.location.search;
+        this.endpoint = Constants.SEARCH_COURSE_BY_PARAMS_URL + window.location.search;
     }
 
     fetchCourses = async () => {
