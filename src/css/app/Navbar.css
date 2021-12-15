@@ -27,3 +27,18 @@
     margin-top: 1%;
     margin-left: 1%;
 }
+
+.current-user-info {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 1em;
+    font-size: 1.7em;
+}
+
+.btn-sign-out {
+    background-color: blueviolet;
+    color: white;
+    margin-right: 0.5em;
+}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
-const LOGIN_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user/login";
+import * as Constants from '../constants.js';
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'; // for all requests
 axios.defaults.headers.common['Content-Type'] = 'application/json'; // for all requests
@@ -24,17 +23,40 @@ class SignIn extends React.Component {
         });
     }
 
+    async getLogInToken() {
+        let response = await axios.post(Constants.LOGIN_URL, { email: this.state.email, password: this.state.password });
+        const token = response.data.token;
+        console.log(response);
+        localStorage.setItem('token', token);
+
+        return token;
+    }
+
+    async getUserInfo(token) {
+        let response = await axios.get(Constants.USER_INFO_URL, { 
+            headers: {
+                'x-access-token': token 
+            }        
+        });
+        const userInfo = response.data;
+        console.log(userInfo);
+        return userInfo;
+    }
+
     handleSubmit = async event => {
         event.preventDefault();
         console.log(this.state);
         
-        this.setState({ message: "Ingresando..." });
+        this.setState({ errMsg: "Ingresando..." });
+        
         try {
-            let response = await axios.post(LOGIN_ENDPOINT_URL, this.state);
-            console.log(response);
-            localStorage.setItem('token', response.data.token);
-            window.location.href = "./users";
+            const token = await this.getLogInToken();
+            const userInfo = await this.getUserInfo(token);
+            this.props.updateCurrentUser(userInfo);
+            this.props.history.push('/users');
         } catch(err) {
+            console.log("ERROR LOGIN");
+            console.log(err);
             if(err.response && err.response.status == 401) {
                 this.setState({errMsg: "Usuario o contraseña incorrectos"});
             }

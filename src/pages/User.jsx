@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import '../css/users/User.css';
 import { CircularProgress } from '@material-ui/core';
+import * as Constants from '../constants.js';
 
 class User extends React.Component {
     constructor(props){
@@ -10,7 +11,7 @@ class User extends React.Component {
             userInfo: [],
             loading: true
         };
-        this.endpoint = "https://ubademy--user-service.herokuapp.com/user/byParams" + window.location.search;
+        this.endpoint = Constants.SEARCH_USER_BY_PARAMS_URL + window.location.search;
     }
 
     fetchUsers = async () => {
