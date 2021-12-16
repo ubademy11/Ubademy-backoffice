@@ -1,12 +1,17 @@
 .Sidebar {
     width: 14rem;
-    background-color: #dee2e6;;
+    background-color: white;
 }
 
 .Sidebar.closed {
     width: 3rem;
     transition: all 0.1s ease 0s;
 }
+
+.Sidebar.opened {
+    transition: all 0.1s ease 0s;
+}
+
 .SidebarList {
     height: auto;
     width: 100%;
@@ -25,7 +30,7 @@
 
 .SidebarItem .ItemLink {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 18px;
     width: 95%;
     height: 100%;
@@ -37,7 +42,11 @@
 
 .SidebarList .SidebarItem:hover {
     cursor: pointer;
-    background-color: #494a4b; 
+    background-color: black;
+}
+
+.SidebarItem:hover .ItemLink {
+    color: white;
 }
 
 .SidebarItem .ItemIcon {

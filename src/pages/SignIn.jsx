@@ -26,7 +26,6 @@ class SignIn extends React.Component {
     async getLogInToken() {
         let response = await axios.post(Constants.LOGIN_URL, { email: this.state.email, password: this.state.password });
         const token = response.data.token;
-        console.log(response);
         localStorage.setItem('token', token);
 
         return token;
@@ -59,6 +58,8 @@ class SignIn extends React.Component {
             console.log(err);
             if(err.response && err.response.status == 401) {
                 this.setState({errMsg: "Usuario o contraseña incorrectos"});
+            } else {
+                this.setState({errMsg: "Error al conectarse con el servidor"});
             }
             
         }
