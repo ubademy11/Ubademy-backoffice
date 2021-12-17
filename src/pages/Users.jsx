@@ -2,8 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import UserTable from '../components/users/UserTable.jsx';
-
-const USERS_ENDPOINT_URL = "https://ubademy--user-service.herokuapp.com/user";
+import * as Constants from '../constants.js';
 
 class Users extends React.Component {
     constructor(props){
@@ -15,10 +14,9 @@ class Users extends React.Component {
     }
 
     fetchUsers = async () => {
-
         try {
             const headers = { 'x-access-token': localStorage.getItem('token') };
-            const response = await axios.get(USERS_ENDPOINT_URL, { headers });
+            const response = await axios.get(Constants.USER_LIST_URL, { headers });
             this.setState({ userList: response.data.users });
             console.log(this.state.userList);
         } catch (err) {

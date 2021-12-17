@@ -23,8 +23,20 @@ class App extends React.Component{
     constructor(props){
         super(props);
 
-        this.updateCurrentUser = this.updateCurrentUser.bind(this)
-        this.signOut = this.signOut.bind(this)
+        this.state = {
+            sidebarOpen: true
+        }
+
+        this.updateCurrentUser = this.updateCurrentUser.bind(this);
+        this.signOut = this.signOut.bind(this);
+        this.toggleSidebar = this.toggleSidebar.bind(this);
+    }
+
+    toggleSidebar() {
+        this.setState(prevState => ({
+            sidebarOpen: !prevState.sidebarOpen
+        }));
+        console.log(this.state.sidebarOpen);
     }
 
     updateCurrentUser(userInfo) {
@@ -46,9 +58,9 @@ class App extends React.Component{
                     />
                     <Route path="/signup" exact component={SignUp} />
                     <div className = "App">
-                        <Navbar signOut={this.signOut}/>
+                        <Navbar signOut={this.signOut} sidebarClickHandler={this.toggleSidebar.bind(this)}/>
                             <div className="MainContainer">
-                                <Sidebar className='Sidebar closed'/>
+                                <Sidebar className='Sidebar closed' className={this.state.sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}/>
                                 <div className="Content">
                                     <PrivateRoute path='/users' exact component={Users} />
                                     <PrivateRoute path='/courses' exact component={Courses} />

@@ -3,12 +3,17 @@ import axios from 'axios';
 import '../css/users/User.css';
 import { CircularProgress } from '@material-ui/core';
 import * as Constants from '../constants.js';
+import UserProfile from './UserProfile.jsx';
+import CreatorProfile from './CreatorProfile.jsx';
+import { withRouter } from "react-router-dom";
+import { Grid } from "@material-ui/core";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 class User extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            userInfo: [],
+            userInfo: {},
             loading: true
         };
         this.endpoint = Constants.SEARCH_USER_BY_PARAMS_URL + window.location.search;
@@ -31,24 +36,30 @@ class User extends React.Component {
     }
 
     render () {
-        console.log('th', this.state);
-        let userPage;
         if(this.state.loading)
-            userPage = <CircularProgress />; //TODO: cambiar ubicacion
-        else 
-            userPage = <div className="userPage">    
-                        <img className="userLogo" src={"https://i.pinimg.com/474x/d2/97/a3/d297a3eced48990f8001c8624ec84145.jpg"}></img>
-                        <div className="userInfo">
-                            <p>Nombre: </p> <p className="userData"> {this.state.userInfo.name}</p>
-                            <p>Email: </p>  <p className="userData"> {this.state.userInfo.email}</p>              
-                        </div>
-                    </div>;
-        return (
-            <div>
-                {userPage}
-            </div>
+            return <CircularProgress />; //TODO: cambiar ubicacion
+        if(this.state.userInfo && this.state.userInfo.role == "CREATOR") {
+            return (
+                <>
+                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
+                        <ArrowBackIcon className="goback-icon" /> 
+                        <p className="goback-text">Go back</p>
+                    </Grid>
+                    <CreatorProfile {...this.state}/>
+                </>
             );
+        } else {
+            return (
+                <>
+                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
+                        <ArrowBackIcon className="goback-icon" /> 
+                        <p className="goback-text">Go back</p>
+                    </Grid>
+                    <UserProfile {...this.state}/>
+                </>
+            );
+        }
     }
 }
 
-export default User;
+export default withRouter(User);
