@@ -52,7 +52,7 @@ class SignIn extends React.Component {
             const token = await this.getLogInToken();
             const userInfo = await this.getUserInfo(token);
             this.props.updateCurrentUser(userInfo);
-            this.props.history.push('/users');
+            this.props.history.push('/metrics');
         } catch(err) {
             console.log("ERROR LOGIN");
             console.log(err);

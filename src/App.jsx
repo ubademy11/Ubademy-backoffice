@@ -10,8 +10,10 @@ import "./css/app/SignIn.css";
 import "./css/courses/Courses.css";
 import "./css/courses/Course.css";
 import "./css/users/Users.css";
+import "./css/metrics/Metrics.css";
 import Sidebar from "./components/Sidebar.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Metrics from "./pages/Metrics.jsx";
 import Users from "./pages/Users.jsx";
 import Courses from "./pages/Courses.jsx";
 import SignUp from "./pages/SignUp.jsx";
@@ -62,6 +64,7 @@ class App extends React.Component{
                             <div className="MainContainer">
                                 <Sidebar className='Sidebar closed' className={this.state.sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}/>
                                 <div className="Content">
+                                    <PrivateRoute path='/metrics' exact component={Metrics} />
                                     <PrivateRoute path='/users' exact component={Users} />
                                     <PrivateRoute path='/courses' exact component={Courses} />
                                     <PrivateRoute path='/course' exact component={Course} />
