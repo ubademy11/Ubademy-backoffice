@@ -29,7 +29,6 @@ class Course extends React.Component {
         }
 
         try {
-            console.log('url2', Constants.COURSE_LESSONS + this.state.courseInfo.id);
             const { data: lessons } = await axios.get((Constants.COURSE_LESSONS + this.state.courseInfo.id));
             this.setState({ courseLessons: lessons });
         } catch(error) {
@@ -38,8 +37,7 @@ class Course extends React.Component {
         }
 
         try {
-            console.log('url2', Constants.COURSE_LESSONS + this.state.courseInfo.id);
-            const { data: inscriptions } = await axios.get((Constants.COURSE_LESSONS + this.state.courseInfo.id));
+            const { data: inscriptions } = await axios.get((Constants.COURSE_STUDENTS_URL + this.state.courseInfo.id));
             this.setState({ courseInscriptions: inscriptions });
         } catch(error) {
             console.log("Error al buscar inscripciones del curso solicitado");
@@ -87,6 +85,9 @@ class Course extends React.Component {
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                    <b>Inscriptions</b> 
                                 </AccordionSummary>
+                                {this.state.courseInscriptions.map(student => {
+                                    return <AccordionDetails>{student.name}</AccordionDetails>
+                                })}
                             </Accordion>
                         </div>
                     </div>;
