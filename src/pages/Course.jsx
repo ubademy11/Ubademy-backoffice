@@ -13,6 +13,7 @@ class Course extends React.Component {
         this.state = {
             courseInfo: [],
             courseLessons: [],
+            courseInscriptions: [],
             loading: true
         };
         this.endpoint = Constants.SEARCH_COURSE_BY_PARAMS_URL + window.location.search;
@@ -22,22 +23,26 @@ class Course extends React.Component {
 		try {
             const { data } = await axios.get(this.endpoint);
             this.setState({ courseInfo: data.courses[0] });
-            const { lessons } = await axios.get((Constants.COURSE_LESSONS + this.state.courseInfo.id));
-            console.log('Lessons axios', lessons);
-            this.setState({ courseLessons: lessons });
         } catch(error) {
             console.log("Error al buscar el curso solicitado");
             console.log(error);
         }
-	};
 
-    fetchLessons = async () => {
-		try {
-            const { lessons } = await axios.get((Constants.COURSE_LESSONS + this.state.courseInfo.id));
-            console.log('Lessons axios', lessons);
+        try {
+            console.log('url2', Constants.COURSE_LESSONS + this.state.courseInfo.id);
+            const { data: lessons } = await axios.get((Constants.COURSE_LESSONS + this.state.courseInfo.id));
             this.setState({ courseLessons: lessons });
         } catch(error) {
-            console.log("Error al buscar las clases del curso solicitado");
+            console.log("Error al buscar lecciones del curso solicitado");
+            console.log(error);
+        }
+
+        try {
+            console.log('url2', Constants.COURSE_LESSONS + this.state.courseInfo.id);
+            const { data: inscriptions } = await axios.get((Constants.COURSE_LESSONS + this.state.courseInfo.id));
+            this.setState({ courseInscriptions: inscriptions });
+        } catch(error) {
+            console.log("Error al buscar inscripciones del curso solicitado");
             console.log(error);
         }
 
@@ -46,7 +51,6 @@ class Course extends React.Component {
 
     componentDidMount () {
         this.fetchCourses();
-        this.fetchLessons();
     }
 
     render () {
@@ -61,18 +65,18 @@ class Course extends React.Component {
         if(this.state.loading)
             curso = <CircularProgress />; //TODO: cambiar ubicacion
         else 
-            curso =  <div className="coursePage">    
+            curso =  <div className="coursePage"> 
                         <div className="courseInfo">
                             <h2>{this.state.courseInfo.title}</h2>
-                            <p>Subtitle: {this.state.courseInfo.subtitle}</p>
+                            <p><b>Subtitle:</b> {this.state.courseInfo.subtitle}</p>
                             
-                            <p>Description: {this.state.courseInfo.description}</p>
-                            <p>Language: {this.state.courseInfo.language}</p>
-                            <p>Creator: {this.state.courseInfo.creator.name}</p>
+                            <p><b>Description:</b> {this.state.courseInfo.description}</p>
+                            <p><b>Language:</b> {this.state.courseInfo.language}</p>
+                            <p><b>Creator:</b> {this.state.courseInfo.creator.name}</p>
 
                             <Accordion className="accordion inscription-list" defaultExpanded={true}>
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                    Lessons
+                                    <b>Lessons</b>
                                 </AccordionSummary>
                                 {this.state.courseLessons.map(lesson => {
                                     return <AccordionDetails>{lesson.title}</AccordionDetails>
@@ -81,19 +85,20 @@ class Course extends React.Component {
 
                             <Accordion className="accordion inscription-list" defaultExpanded={true}>
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                    Inscriptions
+                                   <b>Inscriptions</b> 
                                 </AccordionSummary>
                             </Accordion>
                         </div>
                     </div>;
         return (
-        <>
-            <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/courses')}>
-                <ArrowBackIcon className="goback-icon" /> 
-                <p className="goback-text">Go back</p>
-            </Grid>
-            <div>{curso}</div>
-        </>);
+                <>
+                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/courses')}>
+                        <ArrowBackIcon className="goback-icon" /> 
+                        <p className="goback-text">Go back</p>
+                    </Grid>
+                    <div>{curso}</div>
+                </>
+        );
     }
 }
 
