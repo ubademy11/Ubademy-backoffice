@@ -77,7 +77,7 @@ class Course extends React.Component {
                                     <b>Lessons</b>
                                 </AccordionSummary>
                                 {this.state.courseLessons.map(lesson => {
-                                    return <AccordionDetails>{lesson.title}</AccordionDetails>
+                                    return <AccordionDetails>{lesson.id} - {lesson.title}</AccordionDetails>
                                 })}
                             </Accordion>
 
