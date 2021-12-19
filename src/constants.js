@@ -13,6 +13,7 @@ export const SEARCH_USER_BY_PARAMS_URL = USER_SERVICE_BASE_URL + "/user/byParams
 
 // COURSE SERVICE
 export const COURSE_LIST_URL = COURSE_SERVICE_BASE_URL + "/course";
-export const SEARCH_COURSE_BY_PARAMS_URL = COURSE_SERVICE_BASE_URL + "/course/byParams";
+export const SEARCH_COURSE_BY_PARAMS_URL = COURSE_SERVICE_BASE_URL + "/course";
+export const COURSE_LESSONS = COURSE_SERVICE_BASE_URL + "/course/lessons?courseId=";
+export const COURSE_STUDENTS_URL = COURSE_SERVICE_BASE_URL + "/course/students?id=";
 export const USER_COURSES_URL = COURSE_SERVICE_BASE_URL + "/course/enrollments";
-
