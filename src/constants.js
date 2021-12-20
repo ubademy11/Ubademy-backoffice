@@ -10,6 +10,7 @@ export const LOGIN_URL = USER_SERVICE_BASE_URL + "/user/login/admin";
 export const USER_LIST_URL = USER_SERVICE_BASE_URL + "/user";
 export const USER_INFO_URL = USER_SERVICE_BASE_URL + "/user/me";
 export const SEARCH_USER_BY_PARAMS_URL = USER_SERVICE_BASE_URL + "/user/byParams";
+export const METRICS_URL = USER_SERVICE_BASE_URL + "/metrics";
 
 // COURSE SERVICE
 export const COURSE_LIST_URL = COURSE_SERVICE_BASE_URL + "/course";

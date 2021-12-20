@@ -1,0 +1,42 @@
+.metrics-page-container {
+  margin: 3% auto 0% auto;
+  width: 550px;
+}
+
+.metrics-page-container .metrics-controls {
+  display: flex;
+  margin-bottom: 1em;
+  
+}
+
+.metrics-page-container h2 {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.metrics-page-container .refresh-btn {
+  background-color: blueviolet !important;
+  color: white;
+  margin-right: 0.5em;
+}
+
+.interval-controls .MuiToggleButton-primary.Mui-selected {
+  color: blueviolet;
+  background-color: rgba(138, 25, 209, 0.1)
+}
+
+.metrics-container {
+  padding: 1em 1em 1em 1em;
+}
+
+.metrics-table {
+  table-layout: fixed;
+}
+
+.metrics-table-header th {
+  padding-bottom: 0.7em;
+}
+
+.metric-name {
+  padding-right: 100px;
+}
