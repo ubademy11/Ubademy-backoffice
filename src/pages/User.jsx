@@ -39,27 +39,15 @@ class User extends React.Component {
     render () {
         if(this.state.loading)
             return <CircularProgress />; //TODO: cambiar ubicacion
-        if(this.state.userInfo && this.state.userInfo.role == "CREATOR") {
-            return (
-                <>
-                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
-                        <ArrowBackIcon className="goback-icon" /> 
-                        <p className="goback-text">Go back</p>
-                    </Grid>
-                    <CreatorProfile {...this.state}/>
-                </>
-            );
-        } else {
-            return (
-                <>
-                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
-                        <ArrowBackIcon className="goback-icon" /> 
-                        <p className="goback-text">Go back</p>
-                    </Grid>
-                    <UserProfile {...this.state}/>
-                </>
-            );
-        }
+        return (
+            <>
+                <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
+                    <ArrowBackIcon className="goback-icon" /> 
+                    <p className="goback-text">Go back</p>
+                </Grid>
+                <UserProfile {...this.state}/>
+            </>
+        );
     }
 }
 
