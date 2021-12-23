@@ -4,7 +4,6 @@ import '../css/users/User.css';
 import { CircularProgress } from '@material-ui/core';
 import * as Constants from '../constants.js';
 import UserProfile from './UserProfile.jsx';
-import CreatorProfile from './CreatorProfile.jsx';
 import { withRouter } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
