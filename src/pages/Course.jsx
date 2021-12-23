@@ -83,7 +83,7 @@ class Course extends React.Component {
 
                             <Accordion className="accordion inscription-list" defaultExpanded={true}>
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                   <b>Inscriptions</b> 
+                                   <b>Students</b> 
                                 </AccordionSummary>
                                 {this.state.courseInscriptions.map(student => {
                                     return <AccordionDetails>{student.name}</AccordionDetails>

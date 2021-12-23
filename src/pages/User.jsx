@@ -21,7 +21,9 @@ class User extends React.Component {
 
     fetchUsers = async () => {
 		try {
-            const { data } = await axios.get(this.endpoint);
+            const { data } = await axios.get(this.endpoint, {headers: {
+                    'x-access-token': localStorage.getItem('token')
+                }});
             this.setState({ userInfo: data });
         } catch(error) {
             console.log("Error al buscar el usuario solicitado");
