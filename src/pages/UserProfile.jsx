@@ -8,7 +8,8 @@ class UserProfile extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            userCourses: []
+            userCourses: [],
+            createdCourses: []
         };
     }
     
@@ -31,10 +32,31 @@ class UserProfile extends React.Component {
         this.setState({ loading: false });
     };
 
+    async fetchCreatedCourses() {
+        try {
+
+            const { data } = await axios.get(Constants.COURSE_LIST_URL, {
+                params: {
+                    creatorId: this.props.userInfo.id
+                },
+                headers: {
+                    'x-access-token': localStorage.getItem('token')
+                }  
+            });
+            this.setState({ createdCourses: data.courses });
+        } catch(error) {
+            console.log("Error al buscar los cursos del usuario");
+            console.log(error);
+        }
+
+        this.setState({ loading: false });
+    };
+
     componentDidMount() {
-        console.log("NEW");
         console.log(this.props.userInfo);
         this.fetchUserCourses();
+        this.fetchCreatedCourses();
+
     }
 
     titleCase(string){
@@ -52,15 +74,17 @@ class UserProfile extends React.Component {
                 <div className="userInfo">
                     {/*<p>Nombre: </p> <p className="userData"> {this.props.userInfo.name}</p>*/}
                     <h2>{this.props.userInfo.name}</h2>
-                    <p>Id: {this.props.userInfo.id}</p>
-                    
+					
+                    <p>Id: {this.props.userInfo.id}</p>                   
                     <p>Email: {this.props.userInfo.email}</p>
-                    <p>Role: {this.titleCase(this.props.userInfo.role)}</p>
+					<p>Role: {this.titleCase(this.props.userInfo.role)}</p>
+                    <p>Membership: {this.props.userInfo.membershipType}</p>
                     <p>Joined: {joined}</p>
+					<span>Image:</span>{this.props.userInfo.image ? <img src={this.props.userInfo.image} className="userLogo" /> : <></>}
 
                     <Accordion className="accordion inscription-list" defaultExpanded={true}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            Inscriptions
+                            Enrollments
                         </AccordionSummary>
 
                         {this.state.userCourses.map(inscription => {
@@ -68,6 +92,17 @@ class UserProfile extends React.Component {
                                 return <AccordionDetails>{inscription.course.title}</AccordionDetails>
                         })}
                     </Accordion>
+
+                    <Accordion className="accordion created-courses-list" defaultExpanded={true}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            Created courses
+                        </AccordionSummary>
+
+                        {this.state.createdCourses.map(course => {
+                            return <AccordionDetails>{course.title}</AccordionDetails>
+                        })}
+                    </Accordion>
+
                 </div>
             </div>
         );

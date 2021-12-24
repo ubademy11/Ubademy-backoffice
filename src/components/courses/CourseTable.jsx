@@ -9,8 +9,8 @@ class CourseTable extends React.Component{
 
     handleButtonClick = (event) => {
         event.preventDefault();
-        var title = (event.target.id.split(" ")).join("%");
-        window.location.href = "./course?title=" + title;
+        var id = (event.target.id.split(" ")).join("%");
+        window.location.href = `./course?id=${id}`;
     };
 
     columns = [
@@ -25,23 +25,28 @@ class CourseTable extends React.Component{
             sortable: true
         },
         {
-            name: 'Price',
-            selector: row => row.price,
-            sortable: true
-        },
-        {
             name: 'Language',
             selector: row => row.language,
             sortable: true
         },
         {
-            name: 'CreatorId',
-            selector: row => row.creatorId,
+            name: 'Membership',
+            selector: row => row.requiredMembership.name,
+            sortable: true
+        },
+        {
+            name: 'Last Update',
+            selector: row => row.updatedAt,
+            sortable: true
+        },
+        {
+            name: 'Creator',
+            selector: row => row.creator.name,
             sortable: true
         },
         {
             name: 'Options',
-            cell: (row) => <button onClick={this.handleButtonClick} id={row.title}>Show</button>,
+            cell: (row) => <button onClick={this.handleButtonClick} id={row.id}>Show</button>,
             ignoreRowClick: true,
             allowOverflow: true,
             button: true,

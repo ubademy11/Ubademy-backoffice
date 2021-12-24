@@ -4,7 +4,6 @@ import '../css/users/User.css';
 import { CircularProgress } from '@material-ui/core';
 import * as Constants from '../constants.js';
 import UserProfile from './UserProfile.jsx';
-import CreatorProfile from './CreatorProfile.jsx';
 import { withRouter } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -21,7 +20,9 @@ class User extends React.Component {
 
     fetchUsers = async () => {
 		try {
-            const { data } = await axios.get(this.endpoint);
+            const { data } = await axios.get(this.endpoint, {headers: {
+                    'x-access-token': localStorage.getItem('token')
+                }});
             this.setState({ userInfo: data });
         } catch(error) {
             console.log("Error al buscar el usuario solicitado");
@@ -38,27 +39,15 @@ class User extends React.Component {
     render () {
         if(this.state.loading)
             return <CircularProgress />; //TODO: cambiar ubicacion
-        if(this.state.userInfo && this.state.userInfo.role == "CREATOR") {
-            return (
-                <>
-                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
-                        <ArrowBackIcon className="goback-icon" /> 
-                        <p className="goback-text">Go back</p>
-                    </Grid>
-                    <CreatorProfile {...this.state}/>
-                </>
-            );
-        } else {
-            return (
-                <>
-                    <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
-                        <ArrowBackIcon className="goback-icon" /> 
-                        <p className="goback-text">Go back</p>
-                    </Grid>
-                    <UserProfile {...this.state}/>
-                </>
-            );
-        }
+        return (
+            <>
+                <Grid className="goback-btn" container direction="row" alignItems="center" onClick={() => this.props.history.push('/users')}>
+                    <ArrowBackIcon className="goback-icon" /> 
+                    <p className="goback-text">Go back</p>
+                </Grid>
+                <UserProfile {...this.state}/>
+            </>
+        );
     }
 }
 
