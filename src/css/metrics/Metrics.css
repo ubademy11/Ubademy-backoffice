@@ -40,3 +40,9 @@
 .metric-name {
   padding-right: 100px;
 }
+
+.grafico {
+  display: flex;
+  margin: 3% auto 0% auto;
+  width: 550px;
+}

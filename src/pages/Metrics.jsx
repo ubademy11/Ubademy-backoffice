@@ -109,30 +109,30 @@ class Metrics extends React.Component {
     loadData() {
 
         const labels = ["Amount"];
-        console.log(this.metrics.loginsPassword);
+        console.log(this.state.metrics.loginsPassword);
 
         return {
         labels,
         datasets: [
             {
-                label: 'Logins with password ',
+                label: 'Logins with password',
                 data: [this.state.metrics.loginsPassword],
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgba(120,40,140,0.2)',
             },
             {
                 label: 'Google logins',
                 data: [this.state.metrics.loginsGoogle],
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                backgroundColor: 'rgba(120,40,140,0.3)',
             },
             {
                 label: 'New users with password',
                 data: [this.state.metrics.newUsersPassword],
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgba(120,40,140,0.4)',
             },
             {
                 label: 'New Google users',
                 data: [this.state.metrics.newUsersGoogle],
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                backgroundColor: 'rgba(120,40,140,0.5)',
             },
         ],
         };
@@ -140,6 +140,7 @@ class Metrics extends React.Component {
 
     render() { 
         return (
+            <div>
             <div className="metrics-page-container">
                 <h2>Metrics</h2>
                 <div className = "metrics-controls">
@@ -184,7 +185,10 @@ class Metrics extends React.Component {
                     </tr>
                     </table> 
                 </Paper>
-                
+            </div>
+            <div class="grafico">
+                <Bar options={this.loadOptions()} data={this.loadData()} />
+            </div>
             </div>
         )
     }
