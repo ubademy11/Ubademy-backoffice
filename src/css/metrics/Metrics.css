@@ -1,3 +1,9 @@
+.metrics-page {
+  overflow: auto;
+  background-color: #f9f9f9; 
+  padding-bottom: 3%;
+}
+
 .metrics-page-container {
   margin: 3% auto 0% auto;
   width: 550px;
@@ -6,7 +12,6 @@
 .metrics-page-container .metrics-controls {
   display: flex;
   margin-bottom: 1em;
-  
 }
 
 .metrics-page-container h2 {
@@ -39,4 +44,10 @@
 
 .metric-name {
   padding-right: 100px;
+}
+
+.grafico {
+  display: flex;
+  margin: 3% auto 0% auto;
+  width: 550px;
 }
