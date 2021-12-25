@@ -108,7 +108,29 @@ class Metrics extends React.Component {
 
     loadData() {
 
-        const labels = ["Metrics"];
+        const labels = ['New users with password', 'New Google users'];
+        console.log(this.state.metrics.loginsPassword);
+
+        return {
+        labels,
+        datasets: [
+            {
+                label: 'New users with password',
+                data: [this.state.metrics.newUsersPassword, "0"],
+                backgroundColor: 'rgba(120,40,140,0.6)',
+            },
+            {
+                label: 'New Google users',
+                data: ["0", this.state.metrics.newUsersGoogle],
+                backgroundColor: 'rgba(120,40,140,0.9)',
+            },
+        ],
+        };
+    }
+
+    loadDataLogin() {
+
+        const labels = ["Logins with password", 'Google logins'];
         console.log(this.state.metrics.loginsPassword);
 
         return {
@@ -116,23 +138,13 @@ class Metrics extends React.Component {
         datasets: [
             {
                 label: 'Logins with password',
-                data: [this.state.metrics.loginsPassword],
+                data: [this.state.metrics.loginsPassword, "0"],
                 backgroundColor: 'rgba(120,40,140,0.2)',
             },
             {
                 label: 'Google logins',
-                data: [this.state.metrics.loginsGoogle],
-                backgroundColor: 'rgba(120,40,140,0.3)',
-            },
-            {
-                label: 'New users with password',
-                data: [this.state.metrics.newUsersPassword],
+                data: ["0", this.state.metrics.loginsGoogle],
                 backgroundColor: 'rgba(120,40,140,0.4)',
-            },
-            {
-                label: 'New Google users',
-                data: [this.state.metrics.newUsersGoogle],
-                backgroundColor: 'rgba(120,40,140,0.5)',
             },
         ],
         };
@@ -140,7 +152,7 @@ class Metrics extends React.Component {
 
     render() { 
         return (
-            <div>
+            <div className='metrics-page'>
             <div className="metrics-page-container">
                 <h2>Metrics</h2>
                 <div className = "metrics-controls">
@@ -185,6 +197,9 @@ class Metrics extends React.Component {
                     </tr>
                     </table> 
                 </Paper>
+            </div>
+            <div class="grafico">
+                <Bar options={this.loadOptions()} data={this.loadDataLogin()} />
             </div>
             <div class="grafico">
                 <Bar options={this.loadOptions()} data={this.loadData()} />
