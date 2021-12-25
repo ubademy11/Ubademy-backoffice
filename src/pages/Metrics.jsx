@@ -108,7 +108,7 @@ class Metrics extends React.Component {
 
     loadData() {
 
-        const labels = ["Amount"];
+        const labels = ["Metrics"];
         console.log(this.state.metrics.loginsPassword);
 
         return {
