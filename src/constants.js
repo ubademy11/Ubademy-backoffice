@@ -1,6 +1,6 @@
 
-export const USER_SERVICE_BASE_URL = "http://localhost:3002";
-export const COURSE_SERVICE_BASE_URL = "http://localhost:3001";
+//export const USER_SERVICE_BASE_URL = "http://localhost:3002";
+//export const COURSE_SERVICE_BASE_URL = "http://localhost:3001";
 
 export const USER_SERVICE_BASE_URL = "https://user-service-distance71.cloud.okteto.net";
 export const COURSE_SERVICE_BASE_URL = "https://course-service-distance71.cloud.okteto.net";
