@@ -1,9 +1,9 @@
 
-export const USER_SERVICE_BASE_URL = "http://localhost:3002";
-export const COURSE_SERVICE_BASE_URL = "http://localhost:3001";
+//export const USER_SERVICE_BASE_URL = "http://localhost:3002";
+//export const COURSE_SERVICE_BASE_URL = "http://localhost:3001";
 
-//export const USER_SERVICE_BASE_URL = "https://ubademy--user-service.herokuapp.com";
-//export const COURSE_SERVICE_BASE_URL = "https://ubademy-course-service.herokuapp.com";
+export const USER_SERVICE_BASE_URL = "https://user-service-distance71.cloud.okteto.net";
+export const COURSE_SERVICE_BASE_URL = "https://course-service-distance71.cloud.okteto.net";
 
 // USER SERVICE
 export const LOGIN_URL = USER_SERVICE_BASE_URL + "/user/login/admin";
