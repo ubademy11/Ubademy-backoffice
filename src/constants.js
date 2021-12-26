@@ -12,6 +12,7 @@ export const USER_INFO_URL = USER_SERVICE_BASE_URL + "/user/me";
 export const SEARCH_USER_BY_PARAMS_URL = USER_SERVICE_BASE_URL + "/user/profile";
 export const METRICS_URL = USER_SERVICE_BASE_URL + "/metrics";
 export const METRICS_INTERVAL_URL = USER_SERVICE_BASE_URL + "/metric/latest?interval=";
+export const METRICS_REFRESH_URL = USER_SERVICE_BASE_URL + "/metric/refresh";
 
 // COURSE SERVICE
 export const COURSE_LIST_URL = COURSE_SERVICE_BASE_URL + "/course";

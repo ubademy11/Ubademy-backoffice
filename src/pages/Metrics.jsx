@@ -30,6 +30,7 @@ class Metrics extends React.Component {
         };
 
         this.getMetrics = this.getMetrics.bind(this);
+        this.refreshMetrics = this.refreshMetrics.bind(this);
         this.setInterval = this.setInterval.bind(this);
     }
 
@@ -71,13 +72,18 @@ class Metrics extends React.Component {
         });
     }
     
-    setInterval(prevInterval, newInterval) {
+    async refreshMetrics() {
+        await axios.post(Constants.METRICS_REFRESH_URL);
+        await this.getMetrics();
+    }
+
+    async setInterval(prevInterval, newInterval) {
         if(newInterval == null) {
             return;
         }
 
-        this.setState({ metricsInterval: newInterval });
-        this.getMetrics();
+        await this.setState({ metricsInterval: newInterval });
+        await this.getMetrics();
     }
 
     componentDidMount() {
@@ -156,7 +162,7 @@ class Metrics extends React.Component {
             <div className="metrics-page-container">
                 <h2>Metrics</h2>
                 <div className = "metrics-controls">
-                    <Button className="btn refresh-btn" variant="contained" startIcon={<RefreshIcon />} onClick={this.getMetrics}>
+                    <Button className="btn refresh-btn" variant="contained" startIcon={<RefreshIcon />} onClick={this.refreshMetrics}>
                         Refresh
                     </Button>
 
